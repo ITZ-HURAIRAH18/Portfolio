@@ -63,7 +63,7 @@ Here’s the revised **README.md** content customized for your portfolio project
 Clone the repository:
 
 ```bash
-git clone https://github.com/itz-hurairah/React-portfolio.git
+git clone https://github.com/itz-hurairah/Portfolio.git
 ```
 
 Navigate to the project directory:
