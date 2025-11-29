@@ -39,7 +39,7 @@ export function Experience() {
         className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 mb-12"
       >
         <div className="flex-1 space-y-4">
-          <h2 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl font-bold">
+          <h2 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
             Experience
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -52,7 +52,7 @@ export function Experience() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/20 before:to-transparent"
+        className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500 before:to-transparent"
       >
         {experience.map((job, index) => (
           <motion.div
@@ -61,20 +61,28 @@ export function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
+            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
           >
-            <Card className="relative overflow-hidden">
-              <div className="absolute left-0 top-0 h-full w-1 bg-primary" />
+            {/* Timeline Dot */}
+            <div className="absolute left-0 md:left-1/2 w-10 h-10 -ml-5 md:-ml-5 flex items-center justify-center">
+              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)] group-hover:scale-125 transition-transform duration-300" />
+            </div>
+
+            <Card className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] relative overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group-hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.15)]">
+              {/* Gradient Border Line */}
+              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-pink-500 to-purple-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+
               <CardHeader>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                <div className="flex flex-col gap-2">
                   <div>
-                    <CardTitle>{job.role}</CardTitle>
-                    <CardDescription className="text-lg font-medium mt-1">{job.company}</CardDescription>
+                    <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">{job.role}</CardTitle>
+                    <CardDescription className="text-lg font-medium mt-1 text-foreground/80">{job.company}</CardDescription>
                   </div>
-                  <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full w-fit">{job.period}</span>
+                  <span className="text-sm font-medium text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full w-fit border border-purple-500/20">{job.period}</span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p>{job.description}</p>
+                <p className="text-muted-foreground leading-relaxed">{job.description}</p>
               </CardContent>
             </Card>
           </motion.div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import profileImage from "@/assets/profile.jpeg"
 
 export function Home() {
   return (
@@ -9,7 +10,7 @@ export function Home() {
           <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/5 opacity-20 blur-[100px]"></div>
         </div>
 
-        <div className="container flex max-w-[64rem] flex-col md:flex-row items-start justify-between gap-12 text-center md:text-left">
+        <div className="container flex max-w-[64rem] flex-col md:flex-row items-start justify-between gap-16 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -49,12 +50,13 @@ export function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative flex-1 flex justify-center md:justify-end"
           >
-            <div className="h-64 w-64 md:h-80 md:w-80 rounded-full border-4 border-primary overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-sm md:max-w-md h-[400px] md:h-[450px] overflow-hidden shadow-2xl rounded-2xl border border-primary/10">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Muhammad"
+                src={profileImage}
                 alt="Muhammad Abu Hurairah"
-                className="h-full w-full object-cover"
+                className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none"></div>
             </div>
           </motion.div>
         </div>

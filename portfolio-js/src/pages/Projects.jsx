@@ -45,7 +45,7 @@ export function Projects() {
         className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 mb-12"
       >
         <div className="flex-1 space-y-4">
-          <h2 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl font-bold">
+          <h2 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
             Projects
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -67,34 +67,41 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
+            className="group relative"
           >
-            <Card className="flex flex-col justify-between h-full border-muted bg-card/50 backdrop-blur-sm hover:bg-card hover:border-primary/20 transition-all duration-300 overflow-hidden group shadow-sm hover:shadow-md">
+            {/* Gradient Border Effect */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl opacity-50 group-hover:opacity-100 transition duration-500 blur group-hover:blur-md"></div>
+
+            <Card className="relative flex flex-col justify-between h-full bg-card/90 backdrop-blur-xl border-0 rounded-xl overflow-hidden">
               <div className="h-48 overflow-hidden relative">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
               <CardHeader>
-                <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+                <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 group-hover:from-primary group-hover:to-purple-400 transition-all duration-300">
+                  {project.title}
+                </CardTitle>
+                <CardDescription className="line-clamp-2 mt-2">{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-secondary/50 hover:bg-secondary transition-colors">
+                    <Badge key={tag} variant="secondary" className="bg-secondary/50 hover:bg-primary/20 hover:text-primary transition-colors border border-white/5">
                       {tag}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
               <CardFooter className="mt-auto pt-0">
-                <Button asChild className="w-full group/btn" variant="outline">
+                <Button asChild className="w-full group/btn relative overflow-hidden" variant="outline">
                   <a href={project.link} className="flex items-center justify-center gap-2">
-                    View Project
-                    <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                    <span className="relative z-10">View Project</span>
+                    <span className="relative z-10 group-hover/btn:translate-x-1 transition-transform">→</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                   </a>
                 </Button>
               </CardFooter>
