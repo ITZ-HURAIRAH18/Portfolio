@@ -11,7 +11,7 @@ export function Home() {
           <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/5 opacity-20 blur-[100px]"></div>
         </div>
 
-        <div className="container flex max-w-[64rem] flex-col md:flex-row items-center justify-between gap-16 text-center md:text-left">
+        <div className="container flex max-w-[68rem] flex-col md:flex-row items-center justify-between gap-16 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -33,19 +33,19 @@ export function Home() {
                     repeatDelay: 0.5
                   }}
                   className="origin-bottom-right"
-                >👋</motion.span><span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">, I'm
+                ></motion.span><span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">, I'm
               </span> <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
                 Muhammad Abu Hurairah
               </span>
             </h1>
 
-            <div className="flex justify-center md:justify-start items-center gap-2 flex-wrap h-[30px] text-xl sm:text-2xl md:text-3xl font-bold">
+            <div className="flex justify-center md:justify-start items-center gap-2 flex-wrap text-xl sm:text-2xl md:text-3xl font-bold min-h-[40px]">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
                 <Typewriter
                   options={{
                     strings: [
-                      "Full-Stack Developer 🚀",
+                      "Full-Stack Developer ",
                       "Python | Django | React | Next.js",
                       "MERN Stack Developer",
                       "Clean Code | API Craftsman",

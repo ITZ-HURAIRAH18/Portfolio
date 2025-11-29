@@ -155,9 +155,8 @@ export function Contact() {
                     className="bg-secondary/50 border-white/10 focus:border-purple-500 transition-colors min-h-[120px]"
                   />
                 </div>
-                <Button type="submit" className="w-full relative overflow-hidden group/btn" disabled={isSubmitting}>
-                  <span className="relative z-10">{isSubmitting ? "Sending..." : "Send Message"}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                <Button type="submit" className="w-full bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
