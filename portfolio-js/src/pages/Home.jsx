@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import profileImage from "@/assets/profile.jpeg"
+import Typewriter from 'typewriter-effect';
 
 export function Home() {
   return (
@@ -18,27 +19,45 @@ export function Home() {
             className="flex-1 space-y-8"
           >
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-              Hi <motion.span
-                style={{ display: 'inline-block' }}
-                animate={{
-                  rotate: [0, 20, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{
-                  duration: 1.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatDelay: 0.5
-                }}
-                className="origin-bottom-right"
-              >👋</motion.span>, I'm <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
+                Hi </span><motion.span
+                  style={{ display: 'inline-block' }}
+                  animate={{
+                    rotate: [0, 20, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 0.5
+                  }}
+                  className="origin-bottom-right"
+                >👋</motion.span><span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">, I'm
+              </span> <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
                 Muhammad Abu Hurairah
               </span>
             </h1>
 
-            <div className="flex justify-center md:justify-start items-center gap-2 flex-wrap h-[30px]">
-              <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=A855F7&center=false&vCenter=true&width=550&lines=Full-Stack+Developer+🚀;Python+|+Django+|+React+|+Next.js;MERN+Stack+Developer;Clean+Code+|+API+Craftsman;Always+Learning+New+Things" alt="Typing SVG" />
+            <div className="flex justify-center md:justify-start items-center gap-2 flex-wrap h-[30px] text-xl sm:text-2xl md:text-3xl font-bold">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
+                <Typewriter
+                  options={{
+                    strings: [
+                      "Full-Stack Developer 🚀",
+                      "Python | Django | React | Next.js",
+                      "MERN Stack Developer",
+                      "Clean Code | API Craftsman",
+                      "Always Learning New Things"
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 50,
+                    delay: 50,
+                  }}
+                />
+              </span>
             </div>
 
             <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 mx-auto md:mx-0">
@@ -47,13 +66,12 @@ export function Home() {
 
             <div className="space-x-4 pt-4 flex flex-col sm:flex-row justify-center md:justify-start gap-4 sm:gap-0">
               <a href="#projects">
-                <Button size="lg" className="w-full sm:w-auto relative overflow-hidden group">
-                  <span className="relative z-10">View Work</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300">
+                  View Work
                 </Button>
               </a>
               <a href="#contact">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto border-purple-500/20 hover:bg-purple-500/10 hover:text-purple-400 transition-colors">Contact Me</Button>
+                <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-purple-500 hover:bg-gradient-to-r hover:from-primary hover:to-purple-600 hover:border-transparent transition-all duration-300">Contact Me</Button>
               </a>
             </div>
           </motion.div>

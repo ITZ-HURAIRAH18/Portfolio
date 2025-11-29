@@ -9,24 +9,28 @@ import { motion } from "framer-motion"
 
 const experience = [
   {
-    company: "Tech Solutions Inc.",
-    role: "Senior Frontend Developer",
-    period: "2022 - Present",
-    description: "Leading the frontend team in building scalable web applications using React and Next.js.",
-  },
-  {
-    company: "Digital Agency",
+    company: "Nexagen Solutions",
     role: "Full Stack Developer",
-    period: "2020 - 2022",
-    description: "Developed and maintained client websites using MERN stack.",
+    period: "2025-Aug - 2022-Oct",
+    description:
+      "Developed and maintained web applications using the MERN stack, ensuring smooth frontend and backend integration.",
   },
   {
-    company: "StartUp Hub",
-    role: "Junior Developer",
-    period: "2019 - 2020",
-    description: "Collaborated with senior developers to implement UI features.",
+    company: "Technsol",
+    role: "Django Developer",
+    period: "2024-Aug - 2025-Jan",
+    description:
+      "Built and optimized modern web applications using Django REST Framework, React, Next.js, and Tailwind CSS.",
   },
-]
+  {
+    company: "Independent Projects",
+    role: "Full Stack / Django / Next Developer",
+    period: "2023 - Present",
+    description:
+      "Built multiple personal and freelance projects including a Loan Management System, Quiz App, Chatbot System, Stock & Crypto Tracker and various frontend React applications.",
+  }
+];
+
 
 export function Experience() {
   return (
