@@ -16,8 +16,8 @@ export function Contact() {
   return (
     <div className="container py-24">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 mb-12"
@@ -32,9 +32,9 @@ export function Contact() {
         </div>
       </motion.div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="flex flex-col gap-12">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
@@ -67,7 +67,7 @@ export function Contact() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}

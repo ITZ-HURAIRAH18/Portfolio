@@ -32,8 +32,8 @@ export function Experience() {
   return (
     <div className="container py-24">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 mb-12"
@@ -47,7 +47,13 @@ export function Experience() {
           </p>
         </div>
       </motion.div>
-      <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/20 before:to-transparent">
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/20 before:to-transparent"
+      >
         {experience.map((job, index) => (
           <motion.div
             key={job.company}
@@ -73,7 +79,7 @@ export function Experience() {
             </Card>
           </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </div >
   )
 }

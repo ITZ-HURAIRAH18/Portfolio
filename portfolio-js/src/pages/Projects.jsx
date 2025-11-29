@@ -38,8 +38,8 @@ export function Projects() {
   return (
     <div className="container py-24">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 mb-12"
@@ -53,7 +53,13 @@ export function Projects() {
           </p>
         </div>
       </motion.div>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      >
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
@@ -95,7 +101,7 @@ export function Projects() {
             </Card>
           </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </div >
   )
 }
