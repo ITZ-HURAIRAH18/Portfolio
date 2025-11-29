@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { motion } from "framer-motion"
+import { Github, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function Contact() {
   return (
@@ -78,14 +79,21 @@ export function Contact() {
               Feel free to reach out through social media or check out my code repositories.
             </p>
             <div className="flex gap-4">
-              <a href="https://x.com/HurairahAb73769" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src="https://skillicons.dev/icons?i=twitter" width="40" alt="Twitter" />
+              <a href="https://x.com/HurairahAb73769" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Twitter className="h-6 w-6" />
+                <span className="sr-only">Twitter</span>
               </a>
-              <a href="https://www.linkedin.com/in/muhammad-abu-hurairah-988ba1303" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src="https://skillicons.dev/icons?i=linkedin" width="40" alt="LinkedIn" />
+              <a href="https://www.linkedin.com/in/muhammad-abu-hurairah-988ba1303" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Linkedin className="h-6 w-6" />
+                <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="https://instagram.com/abu_hurairah.rehmani" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <img src="https://skillicons.dev/icons?i=instagram" width="40" alt="Instagram" />
+              <a href="https://instagram.com/abu_hurairah.rehmani" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Instagram className="h-6 w-6" />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a href="https://github.com/itz-hurairah18" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Github className="h-6 w-6" />
+                <span className="sr-only">GitHub</span>
               </a>
             </div>
           </div>

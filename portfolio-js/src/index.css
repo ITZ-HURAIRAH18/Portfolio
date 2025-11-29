@@ -7,6 +7,12 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 1px 1px, rgba(128, 128, 128, 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
