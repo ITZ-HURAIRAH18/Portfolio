@@ -13,7 +13,11 @@ import { Label } from "@/components/ui/label"
 import { motion } from "framer-motion"
 import { Github, Twitter, Linkedin, Instagram, CheckCircle2 } from "lucide-react"
 
+import emailjs from "@emailjs/browser"
+import { useRef } from "react"
+
 export function Contact() {
+  const formRef = useRef()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,6 +25,7 @@ export function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e) => {
     const { id, value } = e.target
@@ -33,17 +38,30 @@ export function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError("")
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: "Abu Hurairah",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
 
-    console.log("Form submitted:", formData)
-    setIsSubmitting(false)
-    setIsSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
-
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSuccess(false), 3000)
+      setIsSuccess(true)
+      setFormData({ name: "", email: "", message: "" })
+      setTimeout(() => setIsSuccess(false), 5000)
+    } catch (err) {
+      console.error("EmailJS Error:", err)
+      setError("Failed to send message. Please try again later.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -83,6 +101,16 @@ export function Contact() {
                 <CheckCircle2 className="h-16 w-16 text-green-500 mb-4" />
                 <h3 className="text-2xl font-bold text-foreground">Message Sent!</h3>
                 <p className="text-muted-foreground">Thanks for reaching out. I'll get back to you soon.</p>
+              </div>
+            )}
+            {error && (
+              <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex flex-col items-center justify-center z-10 animate-in fade-in duration-300">
+                <div className="h-16 w-16 text-red-500 mb-4 flex items-center justify-center rounded-full bg-red-500/10">
+                  <span className="text-3xl font-bold">!</span>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground">Oops!</h3>
+                <p className="text-muted-foreground mb-4">{error}</p>
+                <Button onClick={() => setError("")} variant="outline">Try Again</Button>
               </div>
             )}
             <CardHeader>

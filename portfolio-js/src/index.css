@@ -84,4 +84,22 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-500/50 rounded-full hover:bg-purple-500 transition-colors;
+  }
+
+  /* Custom Selection */
+  ::selection {
+    @apply bg-purple-500/30 text-purple-500;
+  }
 }
