@@ -55,17 +55,18 @@ export function Contact() {
         viewport={{ once: true }}
         className="flex flex-col items-center gap-4 text-center mb-12"
       >
-        <div className="space-y-4">
-          <h2 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
-            Contact
+        <div className="space-y-4 relative">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
+          <h2 className="relative inline-block font-heading text-4xl tracking-tight lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
+            Get in Touch
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Get in touch with me for opportunities or collaborations.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Have a project in mind or just want to say hi? I'd love to hear from you.
           </p>
         </div>
       </motion.div>
 
-      <div className="flex flex-col gap-12 max-w-3xl mx-auto">
+      <div className="flex flex-col gap-8 max-w-lg mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -173,20 +174,28 @@ export function Contact() {
             <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">GitHub Streaks</h3>
             <div className="p-1 rounded-xl">
               <img
-                src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000"
+                src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000&ring=A855F7&fire=A855F7&currStreakNum=A855F7&currStreakLabel=A855F7&sideLabels=A855F7&dates=A855F7"
                 alt="GitHub Streak"
                 className="w-full max-w-md rounded-lg"
               />
             </div>
           </div>
 
-          <div className="p-6 border-0 rounded-xl bg-gradient-to-br from-secondary/30 to-purple-900/10 w-full backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-pink-500 to-purple-500" />
-            <blockquote className="italic text-lg text-muted-foreground relative z-10">
-              "Code is like humor. When you have to explain it, it’s bad."
-            </blockquote>
-            <p className="mt-2 font-semibold text-primary relative z-10">— Cory House</p>
-          </div>
+          {/* <div className="relative w-full max-w-2xl mx-auto mt-8 group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+            <div className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-xl border border-white/10 flex flex-col items-center text-center">
+              <span className="text-6xl text-purple-500/20 font-serif absolute top-4 left-4">"</span>
+              <blockquote className="text-xl md:text-2xl font-medium text-foreground/90 relative z-10 italic font-serif">
+                Code is like humor. When you have to explain it, it’s bad.
+              </blockquote>
+              <span className="text-6xl text-purple-500/20 font-serif absolute bottom-0 right-4 leading-none">"</span>
+              <div className="mt-4 flex items-center gap-2">
+                <div className="h-px w-8 bg-purple-500/50" />
+                <p className="font-semibold text-primary">— Cory House</p>
+                <div className="h-px w-8 bg-purple-500/50" />
+              </div>
+            </div>
+          </div> */}
         </motion.div>
       </div>
     </div>

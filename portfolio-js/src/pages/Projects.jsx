@@ -42,13 +42,14 @@ export function Projects() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 mb-12"
+        className="flex flex-col items-center gap-4 text-center mb-12"
       >
-        <div className="flex-1 space-y-4">
-          <h2 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
-            Projects
+        <div className="space-y-4 relative">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
+          <h2 className="relative inline-block font-heading text-4xl tracking-tight lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
+            Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A collection of projects I've worked on.
           </p>
         </div>
@@ -82,7 +83,7 @@ export function Projects() {
                 />
               </div>
               <CardHeader>
-                <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 group-hover:from-primary group-hover:to-purple-400 transition-all duration-300">
+                <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 group-hover:from-primary group-hover:to-purple-400 transition-all duration-300">
                   {project.title}
                 </CardTitle>
                 <CardDescription className="line-clamp-2 mt-2">{project.description}</CardDescription>

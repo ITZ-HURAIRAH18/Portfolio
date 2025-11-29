@@ -29,10 +29,15 @@ export function Skills() {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center space-y-4"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Skills & Technologies</h2>
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            The tools and technologies I use to build digital products.
-          </p>
+          <div className="space-y-4 relative mb-12 text-center">
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
+            <h2 className="relative inline-block font-heading text-4xl tracking-tight lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
+              Skills & Technologies
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              The tools and technologies I use to build digital products.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div

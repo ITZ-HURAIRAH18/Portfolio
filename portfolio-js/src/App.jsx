@@ -10,7 +10,7 @@ import { Contact } from "@/pages/Contact"
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="relative flex min-h-screen flex-col bg-background font-sans antialiased">
+      <div className="relative flex min-h-screen flex-col bg-background font-sans antialiased overflow-x-hidden">
         <Header />
         <main className="flex-1">
           <section id="home">
