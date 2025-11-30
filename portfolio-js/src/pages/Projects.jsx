@@ -11,6 +11,8 @@ import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { Github, ExternalLink } from "lucide-react"
 import Finscope from "../assets/Finscope.png"
+import donor_hub from "../assets/donor_hub.png"
+import loan from "../assets/loan_System.png"
 const projects = [
   {
     title: "FinScope - Real-Time Analytics Dashboard",
@@ -21,20 +23,20 @@ const projects = [
     image: Finscope,
   },
   {
-    title: "Task Management App",
-    description: "A productivity tool for managing daily tasks and projects.",
-    tags: ["Next.js", "TypeScript", "Prisma"],
-    github: "#",
-    live: "#",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+    title: "DonorHub - Charity & Donation Platform",
+    description: "A full-stack MERN platform connecting NGOs and donors through transparent campaign management and secure donation tracking.",
+    tags: ["React", "Node.js", "MongoDB", "Express", "Redux", "Tailwind"],
+    github: "https://github.com/ITZ-HURAIRAH18/Saylani_hackton",
+    live: "https://donor-hub-eta.vercel.app/",
+    image: donor_hub,
   },
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio website showcasing skills and projects.",
-    tags: ["React", "Vite", "shadcn/ui"],
-    github: "#",
-    live: "#",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    title: "LoanVerse - Loan Management System",
+    description: "A full-stack loan management platform built with Django and React, enabling loan applications, approvals, repayment tracking with role-based dashboards.",
+    tags: ["Django", "React", "Vite", "Tailwind", "REST API", "SQLite"],
+    github: "https://github.com/ITZ-HURAIRAH18/LoanVerse",
+    live: null,
+    image:loan,
   },
 ]
 
@@ -103,20 +105,24 @@ export function Projects() {
               </CardContent>
               <CardFooter className="mt-auto pt-0">
                 <div className="flex gap-3 w-full">
-                  <Button asChild className="flex-1 group/btn relative overflow-hidden" variant="outline">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                      <Github className="w-4 h-4 relative z-10" />
-                      <span className="relative z-10">Code</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                    </a>
-                  </Button>
-                  <Button asChild className="flex-1 group/btn relative overflow-hidden" variant="outline">
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                      <ExternalLink className="w-4 h-4 relative z-10" />
-                      <span className="relative z-10">Live</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                    </a>
-                  </Button>
+                  {project.github && (
+                    <Button asChild className={`${project.live ? 'flex-1' : 'w-full'} group/btn relative overflow-hidden`} variant="outline">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                        <Github className="w-4 h-4 relative z-10" />
+                        <span className="relative z-10">Code</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                      </a>
+                    </Button>
+                  )}
+                  {project.live && (
+                    <Button asChild className="flex-1 group/btn relative overflow-hidden" variant="outline">
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                        <ExternalLink className="w-4 h-4 relative z-10" />
+                        <span className="relative z-10">Live</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardFooter>
             </Card>
