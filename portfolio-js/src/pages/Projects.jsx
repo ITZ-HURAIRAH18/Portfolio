@@ -17,6 +17,7 @@ import chat from "../assets/chatbot.png"
 import schedule from "../assets/schedule.png"
 import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
+import todo from "../assets/todo.png"
 const projects = [
   {
     title: "FinScope - Real-Time Analytics Dashboard",
@@ -75,6 +76,24 @@ const projects = [
   live: "https://eraquiz.netlify.app/",
   image: quiz,
 },
+{
+  title: "Todo App in Next.js",
+  description:
+    "A modern and feature-rich Todo management application built with Next.js 16, TypeScript, Prisma, and PostgreSQL. Includes authentication, role-based access, todo sharing, admin dashboard, dark/light theme support, and advanced UI animations.",
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "NextAuth",
+    "Tailwind CSS",
+    "Shadcn UI"
+  ],
+  github: "https://github.com/ITZ-HURAIRAH18/Todo-in-Next.js",
+  live: "https://taskify18.vercel.app/",
+  image: todo, // replace with your imported image variable
+}
+
 
 ]
 
