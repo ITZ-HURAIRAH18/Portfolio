@@ -10,15 +10,15 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { Github, ExternalLink } from "lucide-react"
-
+import Finscope from "../assets/Finscope.png"
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution built with React and Node.js.",
-    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
-    github: "#",
-    live: "#",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+    title: "FinScope - Real-Time Analytics Dashboard",
+    description: "A comprehensive financial analytics platform with real-time crypto & stock trading simulation, portfolio management, and market analytics.",
+    tags: ["Next.js", "TypeScript", "Redux", "Prisma", "PostgreSQL", "WebSocket"],
+    github: "https://github.com/ITZ-HURAIRAH18/FinScope-Real-Time-Crypto-Stock-Analytics-Dashboard",
+    live: "https://finscope-hub.vercel.app/",
+    image: Finscope,
   },
   {
     title: "Task Management App",
