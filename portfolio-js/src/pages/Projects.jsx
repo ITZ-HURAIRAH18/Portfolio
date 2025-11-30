@@ -9,27 +9,31 @@ import {
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
+import { Github, ExternalLink } from "lucide-react"
 
 const projects = [
   {
     title: "E-commerce Platform",
     description: "A full-stack e-commerce solution built with React and Node.js.",
     tags: ["React", "Node.js", "MongoDB", "Tailwind"],
-    link: "#",
+    github: "#",
+    live: "#",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
   },
   {
     title: "Task Management App",
     description: "A productivity tool for managing daily tasks and projects.",
     tags: ["Next.js", "TypeScript", "Prisma"],
-    link: "#",
+    github: "#",
+    live: "#",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
   },
   {
     title: "Portfolio Website",
     description: "A personal portfolio website showcasing skills and projects.",
     tags: ["React", "Vite", "shadcn/ui"],
-    link: "#",
+    github: "#",
+    live: "#",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
   },
 ]
@@ -98,13 +102,22 @@ export function Projects() {
                 </div>
               </CardContent>
               <CardFooter className="mt-auto pt-0">
-                <Button asChild className="w-full group/btn relative overflow-hidden" variant="outline">
-                  <a href={project.link} className="flex items-center justify-center gap-2">
-                    <span className="relative z-10">View Project</span>
-                    <span className="relative z-10 group-hover/btn:translate-x-1 transition-transform">→</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                  </a>
-                </Button>
+                <div className="flex gap-3 w-full">
+                  <Button asChild className="flex-1 group/btn relative overflow-hidden" variant="outline">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      <Github className="w-4 h-4 relative z-10" />
+                      <span className="relative z-10">Code</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                    </a>
+                  </Button>
+                  <Button asChild className="flex-1 group/btn relative overflow-hidden" variant="outline">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      <ExternalLink className="w-4 h-4 relative z-10" />
+                      <span className="relative z-10">Live</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                    </a>
+                  </Button>
+                </div>
               </CardFooter>
             </Card>
           </motion.div>
