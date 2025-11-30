@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import profileImage from "@/assets/profile.jpeg"
+import CV from "@/assets/CV.pdf"
 import Typewriter from 'typewriter-effect';
 
 export function Home() {
@@ -65,9 +66,9 @@ export function Home() {
             </p>
 
             <div className="space-x-4 pt-4 flex flex-col sm:flex-row justify-center md:justify-start gap-4 sm:gap-0">
-              <a href="#projects">
+              <a href={CV} download="Muhammad_Abu_Hurairah_CV.pdf">
                 <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300">
-                  View Work
+                  Download CV
                 </Button>
               </a>
               <a href="#contact">

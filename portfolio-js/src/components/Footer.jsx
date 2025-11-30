@@ -1,8 +1,40 @@
+import { motion } from "framer-motion"
+
 export function Footer() {
   return (
-    <footer className="relative py-8 md:py-10 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50" />
-      <div className="container flex flex-col items-center justify-center gap-4 md:flex-row">
+    <footer className="relative py-8 md:py-10 overflow-hidden border-t border-border/40 bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
+      {/* Animated gradient border */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-70 animate-pulse" />
+      
+      {/* Floating particles effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-0 left-1/4 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-0 right-1/4 w-32 h-32 bg-pink-500/5 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="container relative flex flex-col items-center justify-center gap-4 md:flex-row">
         <p className="text-center text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 font-bold">Abu Hurairah</span>. All rights reserved.
         </p>
