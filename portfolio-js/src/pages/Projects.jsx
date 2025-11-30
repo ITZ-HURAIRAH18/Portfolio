@@ -13,6 +13,7 @@ import { Github, ExternalLink } from "lucide-react"
 import Finscope from "../assets/Finscope.png"
 import donor_hub from "../assets/donor_hub.png"
 import loan from "../assets/loan_System.png"
+import chat from "../assets/chatbot.png"
 const projects = [
   {
     title: "FinScope - Real-Time Analytics Dashboard",
@@ -36,7 +37,15 @@ const projects = [
     tags: ["Django", "React", "Vite", "Tailwind", "REST API", "SQLite"],
     github: "https://github.com/ITZ-HURAIRAH18/LoanVerse",
     live: null,
-    image:loan,
+    image: loan,
+  },
+  {
+    title: "HealthWise AI - Medical Chatbot",
+    description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
+    tags: ["React", "Tailwind", "Google Gemini API", "Lucide Icons"],
+    github: "https://github.com/ITZ-HURAIRAH18/HealthWise-AI",
+    live: "https://health-wise-ai-chatbot.vercel.app/",
+    image: chat,
   },
 ]
 
@@ -74,13 +83,12 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="group relative"
+            className="group"
           >
-            {/* Gradient Border Effect */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl opacity-50 group-hover:opacity-100 transition duration-500 blur group-hover:blur-md"></div>
-
-            <Card className="relative flex flex-col justify-between h-full bg-card/90 backdrop-blur-xl border-0 rounded-xl overflow-hidden">
-              <div className="h-48 overflow-hidden relative">
+            {/* Animated Water Flow Border */}
+            <div className="animated-border group-hover:animated-border-hover rounded-xl h-full">
+              <Card className="relative flex flex-col h-[520px] bg-card backdrop-blur-xl border-0 rounded-xl overflow-hidden shadow-2xl">
+              <div className="h-48 flex-shrink-0 overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                 <img
                   src={project.image}
@@ -88,13 +96,13 @@ export function Projects() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 group-hover:from-primary group-hover:to-purple-400 transition-all duration-300">
+              <CardHeader className="flex-shrink-0">
+                <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 group-hover:from-primary group-hover:to-purple-400 transition-all duration-300 line-clamp-2">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="line-clamp-2 mt-2">{project.description}</CardDescription>
+                <CardDescription className="line-clamp-3 mt-2">{project.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow overflow-auto">
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="bg-secondary/50 hover:bg-primary/20 hover:text-primary transition-colors border border-white/5">
@@ -103,7 +111,7 @@ export function Projects() {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="mt-auto pt-0">
+              <CardFooter className="flex-shrink-0 pt-4">
                 <div className="flex gap-3 w-full">
                   {project.github && (
                     <Button asChild className={`${project.live ? 'flex-1' : 'w-full'} group/btn relative overflow-hidden`} variant="outline">
@@ -125,7 +133,8 @@ export function Projects() {
                   )}
                 </div>
               </CardFooter>
-            </Card>
+              </Card>
+            </div>
           </motion.div>
         ))}
       </motion.div>

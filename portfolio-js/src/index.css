@@ -102,4 +102,65 @@
   ::selection {
     @apply bg-purple-500/30 text-purple-500;
   }
+
+  /* Animated Border Water Flow Effect */
+  @keyframes water-flow {
+    0% {
+      background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%;
+    }
+    25% {
+      background-position: 100% 0%, 100% 0%, 100% 100%, 0% 100%;
+    }
+    50% {
+      background-position: 100% 0%, 100% 100%, 100% 100%, 0% 100%;
+    }
+    75% {
+      background-position: 100% 0%, 100% 100%, 0% 100%, 0% 100%;
+    }
+    100% {
+      background-position: 100% 0%, 100% 100%, 0% 100%, 0% 0%;
+    }
+  }
+
+  @keyframes water-shimmer {
+    0%, 100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animated-border {
+    position: relative;
+    padding: 4px;
+    background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6, #ec4899);
+    background-size: 300% 300%;
+    animation: water-flow 4s linear infinite;
+    border-radius: 1rem;
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 4px;
+    background: linear-gradient(90deg, 
+      transparent 0%,
+      rgba(236, 72, 153, 0.8) 25%,
+      rgba(139, 92, 246, 0.8) 50%,
+      rgba(59, 130, 246, 0.8) 75%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: water-shimmer 2s ease-in-out infinite;
+  }
+
+  .animated-border-hover {
+    padding: 6px;
+    transition: padding 0.3s ease;
+  }
 }
