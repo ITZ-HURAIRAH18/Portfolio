@@ -16,6 +16,7 @@ import loan from "../assets/loan_System.png"
 import chat from "../assets/chatbot.png"
 import schedule from "../assets/schedule.png"
 import era from "../assets/Era.png"
+import quiz from "../assets/quiz.png"
 const projects = [
   {
     title: "FinScope - Real-Time Analytics Dashboard",
@@ -65,6 +66,16 @@ const projects = [
     live: null,
     image: era,
   },
+  {
+  title: "Excel-Based Quiz App",
+  description:
+    "A dynamic and interactive quiz platform where users can upload Excel files containing MCQs. The app supports custom question selection, timers, instant answer validation, and a responsive Bootstrap UI.",
+  tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "SheetJS", "Web3Forms"],
+  github: "https://github.com/ITZ-HURAIRAH18/Excel-Based-Quiz-App",
+  live: "https://eraquiz.netlify.app/",
+  image: quiz,
+},
+
 ]
 
 export function Projects() {
