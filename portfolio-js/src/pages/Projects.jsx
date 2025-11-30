@@ -14,6 +14,8 @@ import Finscope from "../assets/Finscope.png"
 import donor_hub from "../assets/donor_hub.png"
 import loan from "../assets/loan_System.png"
 import chat from "../assets/chatbot.png"
+import schedule from "../assets/schedule.png"
+import era from "../assets/Era.png"
 const projects = [
   {
     title: "FinScope - Real-Time Analytics Dashboard",
@@ -46,6 +48,22 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/HealthWise-AI",
     live: "https://health-wise-ai-chatbot.vercel.app/",
     image: chat,
+  },
+  {
+    title: "Nexagen - Meeting Scheduling Platform",
+    description: "A professional meeting scheduling and video conferencing platform with WebRTC, real-time communication, and role-based access control.",
+    tags: ["React", "Node.js", "MongoDB", "Socket.io", "WebRTC", "Express"],
+    github: "https://github.com/ITZ-HURAIRAH18/Schedule_Ease",
+    live: null,
+    image: schedule,
+  },
+  {
+    title: "ERA - Smart Wardrobe Manager",
+    description: "A modern clothing management system for boutiques with category management, cart functionality, checkout system, and inventory tracking.",
+    tags: ["Django", "Python", "Bootstrap", "SQLite", "HTML/CSS"],
+    github: "https://github.com/ITZ-HURAIRAH18/ERA--Smart-Wardrobe-Manager",
+    live: null,
+    image: era,
   },
 ]
 
