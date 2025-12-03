@@ -114,7 +114,7 @@ export function Contact() {
               </div>
             )}
             <CardHeader>
-              <CardTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Send a message</CardTitle>
+              <CardTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Send a message</CardTitle>
               <CardDescription>
                 Fill out the form below and I'll get back to you as soon as possible.
               </CardDescription>
