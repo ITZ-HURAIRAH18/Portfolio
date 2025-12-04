@@ -26,6 +26,7 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState("")
+  const [streakError, setStreakError] = useState(false)
 
   const handleChange = (e) => {
     const { id, value } = e.target
@@ -199,12 +200,29 @@ export function Contact() {
 
           <div className="space-y-4 w-full flex flex-col items-center">
             <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">GitHub Streaks</h3>
-            <div className="p-1 rounded-xl">
-              <img
-                src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000&ring=A855F7&fire=A855F7&currStreakNum=A855F7&currStreakLabel=A855F7&sideLabels=A855F7&dates=A855F7"
-                alt="GitHub Streak"
-                className="w-full max-w-md rounded-lg"
-              />
+            <div className="p-1 rounded-xl relative">
+              {!streakError ? (
+                <img
+                  src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000&ring=A855F7&fire=A855F7&currStreakNum=A855F7&currStreakLabel=A855F7&sideLabels=A855F7&dates=A855F7"
+                  alt="GitHub Streak"
+                  className="w-full max-w-md rounded-lg"
+                  onError={() => setStreakError(true)}
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-full max-w-md p-8 rounded-lg bg-secondary/50 border border-white/10 flex flex-col items-center justify-center text-center">
+                  <Github className="h-12 w-12 text-muted-foreground mb-4" />
+                  <p className="text-muted-foreground mb-2">GitHub stats temporarily unavailable</p>
+                  <a 
+                    href="https://github.com/itz-hurairah18" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                  >
+                    View my GitHub profile →
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
