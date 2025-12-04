@@ -202,13 +202,24 @@ export function Contact() {
             <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">GitHub Streaks</h3>
             <div className="p-1 rounded-xl relative">
               {!streakError ? (
-                <img
-                  src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000&ring=A855F7&fire=A855F7&currStreakNum=A855F7&currStreakLabel=A855F7&sideLabels=A855F7&dates=A855F7"
-                  alt="GitHub Streak"
-                  className="w-full max-w-md rounded-lg"
-                  onError={() => setStreakError(true)}
-                  loading="lazy"
-                />
+                <>
+                  {/* Dark mode streak */}
+                  <img
+                    src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000&ring=A855F7&fire=A855F7&currStreakNum=A855F7&currStreakLabel=A855F7&sideLabels=A855F7&dates=A855F7"
+                    alt="GitHub Streak"
+                    className="w-full max-w-md rounded-lg dark:block hidden"
+                    onError={() => setStreakError(true)}
+                    loading="lazy"
+                  />
+                  {/* Light mode streak */}
+                  <img
+                    src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=default&hide_border=true&background=FFFFFF&ring=A855F7&fire=A855F7&currStreakNum=000000&currStreakLabel=000000&sideLabels=000000&dates=666666&stroke=A855F7"
+                    alt="GitHub Streak"
+                    className="w-full max-w-md rounded-lg dark:hidden block"
+                    onError={() => setStreakError(true)}
+                    loading="lazy"
+                  />
+                </>
               ) : (
                 <div className="w-full max-w-md p-8 rounded-lg bg-secondary/50 border border-white/10 flex flex-col items-center justify-center text-center">
                   <Github className="h-12 w-12 text-muted-foreground mb-4" />
