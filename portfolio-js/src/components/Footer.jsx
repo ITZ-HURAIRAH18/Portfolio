@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Sparkles } from "lucide-react"
 
 export function Footer() {
   return (
@@ -35,8 +36,34 @@ export function Footer() {
       </div>
 
       <div className="container relative flex flex-col items-center justify-center gap-4 md:flex-row">
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-sm text-muted-foreground flex items-center gap-2">
+          <motion.span
+            animate={{
+              rotate: [0, 180, 360],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <Sparkles className="h-4 w-4 text-purple-500" />
+          </motion.span>
           &copy; {new Date().getFullYear()} <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 font-bold">Abu Hurairah</span>. All rights reserved.
+          <motion.span
+            animate={{
+              rotate: [0, -180, -360],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <Sparkles className="h-4 w-4 text-pink-500" />
+          </motion.span>
         </p>
       </div>
     </footer>

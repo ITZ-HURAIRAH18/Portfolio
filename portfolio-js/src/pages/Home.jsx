@@ -72,7 +72,7 @@ export function Home() {
                 </Button>
               </a>
               <a href="#contact">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-purple-500 hover:bg-gradient-to-r hover:from-primary hover:to-purple-600 hover:border-transparent transition-all duration-300">Contact Me</Button>
+                <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-purple-500 hover:bg-gradient-to-r hover:from-primary hover:to-purple-600 hover:border-transparent hover:text-white transition-all duration-300">Contact Me</Button>
               </a>
             </div>
           </motion.div>
