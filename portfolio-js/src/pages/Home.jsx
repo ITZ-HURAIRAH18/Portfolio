@@ -66,7 +66,7 @@ export function Home() {
             </p>
 
             <div className="space-x-4 pt-4 flex flex-col sm:flex-row justify-center md:justify-start gap-4 sm:gap-0">
-              <a href={CV} download="Muhammad_Abu_Hurairah_CV.pdf">
+              <a href={CV} download="M Abu Hurairah.pdf">
                 <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300">
                   Download CV
                 </Button>
