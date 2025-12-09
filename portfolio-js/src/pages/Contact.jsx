@@ -26,7 +26,6 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState("")
-  const [streakError, setStreakError] = useState(false)
 
   const handleChange = (e) => {
     const { id, value } = e.target
@@ -199,41 +198,29 @@ export function Contact() {
           </div>
 
           <div className="space-y-4 w-full flex flex-col items-center">
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">GitHub Streaks</h3>
-            <div className="p-1 rounded-xl relative">
-              {!streakError ? (
-                <>
-                  {/* Dark mode streak */}
-                  <img
-                    src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=dark&hide_border=true&background=00000000&ring=A855F7&fire=A855F7&currStreakNum=A855F7&currStreakLabel=A855F7&sideLabels=A855F7&dates=A855F7"
-                    alt="GitHub Streak"
-                    className="w-full max-w-md rounded-lg dark:block hidden"
-                    onError={() => setStreakError(true)}
-                    loading="lazy"
-                  />
-                  {/* Light mode streak */}
-                  <img
-                    src="https://github-readme-streak-stats.herokuapp.com?user=itz-hurairah18&theme=default&hide_border=true&background=FFFFFF&ring=A855F7&fire=A855F7&currStreakNum=000000&currStreakLabel=000000&sideLabels=000000&dates=666666&stroke=A855F7"
-                    alt="GitHub Streak"
-                    className="w-full max-w-md rounded-lg dark:hidden block"
-                    onError={() => setStreakError(true)}
-                    loading="lazy"
-                  />
-                </>
-              ) : (
-                <div className="w-full max-w-md p-8 rounded-lg bg-secondary/50 border border-white/10 flex flex-col items-center justify-center text-center">
-                  <Github className="h-12 w-12 text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground mb-2">GitHub stats temporarily unavailable</p>
-                  <a 
-                    href="https://github.com/itz-hurairah18" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
-                  >
-                    View my GitHub profile →
-                  </a>
-                </div>
-              )}
+            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">GitHub Streak</h3>
+            <div className="w-full max-w-lg">
+              <a 
+                href="https://github.com/itz-hurairah18" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block rounded-lg overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all hover:scale-[1.02] duration-300"
+              >
+                {/* Dark mode streak */}
+                <img
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=itz-hurairah18&theme=dark&hide_border=true&ring=A855F7&fire=EC4899&currStreakNum=A855F7&sideNums=A855F7&currStreakLabel=A855F7&sideLabels=9CA3AF&dates=9CA3AF"
+                  alt="GitHub Streak"
+                  className="w-full dark:block hidden"
+                  loading="lazy"
+                />
+                {/* Light mode streak */}
+                <img
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=itz-hurairah18&theme=default&hide_border=true&ring=A855F7&fire=EC4899&currStreakNum=1F2937&sideNums=1F2937&currStreakLabel=6B7280&sideLabels=6B7280&dates=6B7280"
+                  alt="GitHub Streak"
+                  className="w-full dark:hidden block"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
 
