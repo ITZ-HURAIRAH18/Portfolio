@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="relative py-8 md:py-10 overflow-hidden border-t border-border/40 bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
+    <footer className="relative py-8 md:py-5 overflow-hidden border-t border-border/40 bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
       {/* Animated gradient border */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-70 animate-pulse" />
       
