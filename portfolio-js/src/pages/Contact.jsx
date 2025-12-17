@@ -210,7 +210,7 @@ export function Contact() {
                 >
                   {/* Dark mode streak */}
                   <img
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=itz-hurairah18&theme=dark&hide_border=true&ring=A855F7&fire=EC4899&currStreakNum=A855F7&sideNums=A855F7&currStreakLabel=A855F7&sideLabels=9CA3AF&dates=9CA3AF"
+                    src="https://streak-stats.demolab.com/?user=itz-hurairah18&theme=dark&hide_border=true&ring=A855F7&fire=EC4899&currStreakNum=A855F7&sideNums=A855F7&currStreakLabel=A855F7&sideLabels=9CA3AF&dates=9CA3AF&background=00000000"
                     alt="GitHub Streak"
                     className="w-full dark:block hidden"
                     loading="lazy"
@@ -218,7 +218,7 @@ export function Contact() {
                   />
                   {/* Light mode streak */}
                   <img
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=itz-hurairah18&theme=default&hide_border=true&ring=A855F7&fire=EC4899&currStreakNum=1F2937&sideNums=1F2937&currStreakLabel=6B7280&sideLabels=6B7280&dates=6B7280"
+                    src="https://streak-stats.demolab.com/?user=itz-hurairah18&theme=default&hide_border=true&ring=A855F7&fire=EC4899&currStreakNum=1F2937&sideNums=1F2937&currStreakLabel=6B7280&sideLabels=6B7280&dates=6B7280&background=FFFFFF"
                     alt="GitHub Streak"
                     className="w-full dark:hidden block"
                     loading="lazy"
