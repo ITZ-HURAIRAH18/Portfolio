@@ -19,6 +19,7 @@ import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
 import todo from "../assets/todo.png"
 const projects = [
+  // Projects with both code and live links
   {
     title: "FinScope - Real-Time Analytics Dashboard",
     description: "A comprehensive financial analytics platform with real-time crypto & stock trading simulation, portfolio management, and market analytics.",
@@ -36,20 +37,47 @@ const projects = [
     image: donor_hub,
   },
   {
-    title: "LoanVerse - Loan Management System",
-    description: "A full-stack loan management platform built with Django and React, enabling loan applications, approvals, repayment tracking with role-based dashboards.",
-    tags: ["Django", "React", "Vite", "Tailwind", "REST API", "SQLite"],
-    github: "https://github.com/ITZ-HURAIRAH18/LoanVerse",
-    live: null,
-    image: loan,
-  },
-  {
     title: "HealthWise AI - Medical Chatbot",
     description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
     tags: ["React", "Tailwind", "Google Gemini API", "Lucide Icons"],
     github: "https://github.com/ITZ-HURAIRAH18/HealthWise-AI",
     live: "https://health-wise-ai-chatbot.vercel.app/",
     image: chat,
+  },
+  {
+    title: "Excel-Based Quiz App",
+    description:
+      "A dynamic and interactive quiz platform where users can upload Excel files containing MCQs. The app supports custom question selection, timers, instant answer validation, and a responsive Bootstrap UI.",
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "SheetJS", "Web3Forms"],
+    github: "https://github.com/ITZ-HURAIRAH18/Excel-Based-Quiz-App",
+    live: "https://eraquiz.netlify.app/",
+    image: quiz,
+  },
+  {
+    title: "Todo App in Next.js",
+    description:
+      "A modern and feature-rich Todo management application built with Next.js 16, TypeScript, Prisma, and PostgreSQL. Includes authentication, role-based access, todo sharing, admin dashboard, dark/light theme support, and advanced UI animations.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Tailwind CSS",
+      "Shadcn UI"
+    ],
+    github: "https://github.com/ITZ-HURAIRAH18/Todo-in-Next.js",
+    live: "https://taskify18.vercel.app/",
+    image: todo,
+  },
+  // Projects with only code links
+  {
+    title: "LoanVerse - Loan Management System",
+    description: "A full-stack loan management platform built with Django and React, enabling loan applications, approvals, repayment tracking with role-based dashboards.",
+    tags: ["Django", "React", "Vite", "Tailwind", "REST API", "SQLite"],
+    github: "https://github.com/ITZ-HURAIRAH18/LoanVerse",
+    live: null,
+    image: loan,
   },
   {
     title: "Nexagen - Meeting Scheduling Platform",
@@ -67,34 +95,6 @@ const projects = [
     live: null,
     image: era,
   },
-  {
-  title: "Excel-Based Quiz App",
-  description:
-    "A dynamic and interactive quiz platform where users can upload Excel files containing MCQs. The app supports custom question selection, timers, instant answer validation, and a responsive Bootstrap UI.",
-  tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "SheetJS", "Web3Forms"],
-  github: "https://github.com/ITZ-HURAIRAH18/Excel-Based-Quiz-App",
-  live: "https://eraquiz.netlify.app/",
-  image: quiz,
-},
-{
-  title: "Todo App in Next.js",
-  description:
-    "A modern and feature-rich Todo management application built with Next.js 16, TypeScript, Prisma, and PostgreSQL. Includes authentication, role-based access, todo sharing, admin dashboard, dark/light theme support, and advanced UI animations.",
-  tags: [
-    "Next.js",
-    "TypeScript",
-    "Prisma",
-    "PostgreSQL",
-    "NextAuth",
-    "Tailwind CSS",
-    "Shadcn UI"
-  ],
-  github: "https://github.com/ITZ-HURAIRAH18/Todo-in-Next.js",
-  live: "https://taskify18.vercel.app/",
-  image: todo, // replace with your imported image variable
-}
-
-
 ]
 
 export function Projects() {
