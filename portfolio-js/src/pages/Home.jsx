@@ -5,6 +5,15 @@ import CV from "@/assets/CV.pdf"
 import Typewriter from 'typewriter-effect';
 
 export function Home() {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = CV;
+    link.download = 'M Abu Hurairah.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="flex flex-col min-h-[calc(100vh-3.5rem)]">
       <section className="flex-1 flex flex-col items-center justify-center space-y-10 py-8 md:py-16 overflow-hidden relative">
@@ -66,11 +75,13 @@ export function Home() {
             </p>
 
             <div className="space-x-4 pt-4 flex flex-col sm:flex-row justify-center md:justify-start gap-4 sm:gap-0">
-              <a href={CV} download="M Abu Hurairah.pdf">
-                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300">
-                  Download CV
-                </Button>
-              </a>
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300"
+                onClick={handleDownloadCV}
+              >
+                Download CV
+              </Button>
               <a href="#contact">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-purple-500 hover:bg-gradient-to-r hover:from-primary hover:to-purple-600 hover:border-transparent hover:text-white transition-all duration-300">Contact Me</Button>
               </a>
