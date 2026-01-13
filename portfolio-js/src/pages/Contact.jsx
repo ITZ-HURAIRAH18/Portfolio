@@ -224,6 +224,8 @@ export function Contact() {
                     alt="GitHub Streak"
                     className="w-full dark:block hidden"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
                     onError={() => setStreakError(true)}
                   />
                   {/* Light mode streak */}
@@ -232,6 +234,8 @@ export function Contact() {
                     alt="GitHub Streak"
                     className="w-full dark:hidden block"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
                     onError={() => setStreakError(true)}
                   />
                 </a>
