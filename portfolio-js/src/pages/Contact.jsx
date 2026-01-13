@@ -59,7 +59,17 @@ export function Contact() {
       setTimeout(() => setIsSuccess(false), 5000)
     } catch (err) {
       console.error("EmailJS Error:", err)
-      setError("Failed to send message. Please try again later.")
+      
+      // Handle specific error cases
+      if (err.status === 412) {
+        setError("Email service configuration error. Please contact the site administrator.")
+      } else if (err.status === 400) {
+        setError("Invalid form data. Please check your input and try again.")
+      } else if (err.status === 403) {
+        setError("Email service access denied. Please try again later.")
+      } else {
+        setError("Failed to send message. Please try again later.")
+      }
     } finally {
       setIsSubmitting(false)
     }

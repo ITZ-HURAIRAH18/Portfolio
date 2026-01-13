@@ -2,18 +2,18 @@ import { motion } from "framer-motion"
 
 const skills = [
   { name: "MongoDB", icon: "mongodb" },
-  { name: "Express", icon: "expressjs" },
+  { name: "Express", icon: "express" },
   { name: "React", icon: "react" },
   { name: "Node.js", icon: "nodejs" },
   { name: "Next.js", icon: "nextjs" },
   { name: "Django", icon: "django" },
-  { name: "Python", icon: "py" },
+  { name: "Python", icon: "python" },
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
   { name: "JavaScript", icon: "js" },
   { name: "Bootstrap", icon: "bootstrap" },
   { name: "Tailwind", icon: "tailwind" },
-  { name: "PostgreSQL", icon: "postgres" },
+  { name: "PostgreSQL", icon: "postgresql" },
   { name: "Git", icon: "git" },
   { name: "C++", icon: "cpp" },
 ]
