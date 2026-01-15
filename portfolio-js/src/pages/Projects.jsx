@@ -18,7 +18,7 @@ import schedule from "../assets/schedule.png"
 import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
 import todo from "../assets/todo.png"
-import hirelens from "../assets/hireLens.png"
+import hirelens from "../assets/hirelens.png"
 const projects = [
   // Projects with both code and live links
   {
