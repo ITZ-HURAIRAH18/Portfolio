@@ -7,6 +7,7 @@ const skills = [
   { name: "Node.js", icon: "nodejs" },
   { name: "Next.js", icon: "nextjs" },
   { name: "Django", icon: "django" },
+  { name: "FastAPI", icon: "fastapi" },
   { name: "Python", icon: "python" },
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
