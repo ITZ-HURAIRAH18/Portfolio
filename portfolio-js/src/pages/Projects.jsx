@@ -18,6 +18,7 @@ import schedule from "../assets/schedule.png"
 import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
 import todo from "../assets/todo.png"
+import hirelens from "../assets/hirelens.png"
 const projects = [
   // Projects with both code and live links
   {
@@ -36,6 +37,15 @@ const projects = [
     live: "https://donor-hub-eta.vercel.app/",
     image: donor_hub,
   },
+  {
+  title: "HireLens – AI Resume Analyzer & Chat Assistant",
+  description: "An AI-powered resume analysis platform that provides ATS scoring, strengths & weaknesses, improvement tips, and interactive resume-based chat using LLMs.",
+  tags: ["React", "FastAPI", "LangGraph", "Gemini API", "ATS", "AI"],
+  github: "https://github.com/ITZ-HURAIRAH18/HireLens",
+  live: "https://hire-lensz.vercel.app/",
+  image: hirelens,
+}
+,
   {
     title: "HealthWise AI - Medical Chatbot",
     description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
