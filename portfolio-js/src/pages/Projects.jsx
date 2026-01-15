@@ -37,14 +37,15 @@ const projects = [
     live: "https://donor-hub-eta.vercel.app/",
     image: donor_hub,
   },
-  {
-  title: "HireLens – AI Resume Analyzer & Chat Assistant",
-  description: "An AI-powered resume analysis platform that provides ATS scoring, strengths & weaknesses, improvement tips, and interactive resume-based chat using LLMs.",
-  tags: ["React", "FastAPI", "LangGraph", "Gemini API", "ATS", "AI"],
+{
+  title: "HireLens – Intelligent Resume Intelligence",
+  description: "Real-time AI resume analysis platform delivering ATS scores, actionable insights, and LLM-powered resume chat through a scalable FastAPI backend.",
+  tags: ["React", "FastAPI", "LangGraph", "Gemini API", "AI Systems"],
   github: "https://github.com/ITZ-HURAIRAH18/HireLens",
   live: "https://hire-lensz.vercel.app/",
   image: hirelens,
 }
+
 ,
   {
     title: "HealthWise AI - Medical Chatbot",
