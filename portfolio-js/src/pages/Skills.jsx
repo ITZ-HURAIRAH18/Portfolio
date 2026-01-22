@@ -17,6 +17,7 @@ const skills = [
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "Git", icon: "git" },
   { name: "C++", icon: "cpp" },
+  { name: "AI Agents", icon: "pytorch", customIcon: true },
 ]
 
 export function Skills() {
@@ -59,7 +60,7 @@ export function Skills() {
             >
               <div className="relative p-4 rounded-xl bg-secondary/50 group-hover:bg-secondary transition-colors">
                 <img
-                  src={`https://skillicons.dev/icons?i=${skill.icon}`}
+                  src={skill.customIcon ? `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}/${skill.icon}-original.svg` : `https://skillicons.dev/icons?i=${skill.icon}`}
                   alt={skill.name}
                   width="48"
                   height="48"
