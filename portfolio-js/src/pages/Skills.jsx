@@ -16,6 +16,8 @@ const skills = [
   { name: "Tailwind", icon: "tailwind" },
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "Git", icon: "git" },
+  { name: "GitHub", icon: "github" },
+  { name: "Docker", icon: "docker" },
   { name: "C++", icon: "cpp" },
   { name: "AI Agents", icon: "pytorch", customIcon: true },
 ]
