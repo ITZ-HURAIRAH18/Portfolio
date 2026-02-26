@@ -20,6 +20,7 @@ build
 # Misc
 .DS_Store
 *.pem
+tmpclaude-*
 
 # Logs
 npm-debug.log*
