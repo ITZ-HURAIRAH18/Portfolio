@@ -24,11 +24,16 @@ const Preloader = () => {
         setProgress(100);
         setTimeout(() => {
           setIsExiting(true);
-          setTimeout(() => setLoading(false), 800);
+          setTimeout(() => {
+            setLoading(false);
+            document.body.style.overflow = 'unset';
+          }, 800);
         }, 400);
       }, 2500);
       return () => clearTimeout(timeout);
     };
+
+    document.body.style.overflow = 'hidden';
 
     if (document.readyState === 'complete') {
       handleLoad();
@@ -37,6 +42,7 @@ const Preloader = () => {
       return () => {
         window.removeEventListener('load', handleLoad);
         clearInterval(interval);
+        document.body.style.overflow = 'unset';
       };
     }
   }, []);
