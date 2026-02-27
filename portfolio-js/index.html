@@ -150,21 +150,72 @@
       align-items: center;
       justify-content: center;
       z-index: 10000;
-      transition: opacity 0.5s ease-out;
+      background-color: #030014;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .loader-ring {
-      width: 60px;
-      height: 60px;
-      border: 2px solid rgba(139, 92, 246, 0.1);
-      border-top-color: #8b5cf6;
+    .loader-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+    }
+
+    .loader-orbit {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(139, 92, 246, 0.2);
       border-radius: 50%;
-      animation: spin 1s linear infinite;
     }
 
-    @keyframes spin {
+    .loader-dot {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: #8b5cf6;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #8b5cf6, 0 0 30px #8b5cf6;
+    }
+
+    .animate-orbit {
+      animation: orbit 2s linear infinite;
+    }
+
+    .loader-center {
+      width: 12px;
+      height: 12px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg);
+      }
+
       to {
         transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
       }
     }
   </style>
@@ -172,7 +223,12 @@
 
 <body>
   <div id="initial-loader">
-    <div class="loader-ring"></div>
+    <div class="loader-content">
+      <div class="loader-orbit animate-orbit">
+        <div class="loader-dot"></div>
+      </div>
+      <div class="loader-center"></div>
+    </div>
   </div>
   <div id="root"></div>
 
