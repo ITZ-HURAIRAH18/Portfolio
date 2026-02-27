@@ -6,10 +6,12 @@ import { Skills } from "@/pages/Skills"
 import { Projects } from "@/pages/Projects"
 import { Experience } from "@/pages/Experience"
 import { Contact } from "@/pages/Contact"
+import Preloader from "@/components/Preloader"
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Preloader />
       <div className="relative flex min-h-screen flex-col bg-background font-sans antialiased overflow-x-hidden">
         <Header />
         <main className="flex-1">
