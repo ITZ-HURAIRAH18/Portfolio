@@ -19,8 +19,8 @@ const skills = [
   { name: "GitHub", icon: "github" },
   { name: "Docker", icon: "docker" },
   { name: "C++", icon: "cpp" },
-]
   { name: "AI Agents", icon: "pytorch", customIcon: true },
+]
 
 
 export function Skills() {
