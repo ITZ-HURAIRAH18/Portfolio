@@ -23,6 +23,9 @@ import hirelens from "../assets/hire.png"
 // video asset for project previews
 import fundhubVideo from "../assets/fundhub.mp4"
 import hirelensVideo from "../assets/hirelens.mp4"
+import loanVideo from "../assets/loan.mp4"
+import scheduleEaseVideo from "../assets/scheduleease.mp4"
+import todoVideo from "../assets/todo.mp4"
 
 const projects = [
   // Projects with both code and live links
@@ -88,6 +91,7 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/Todo-in-Next.js",
     live: "https://taskify18.vercel.app/",
     image: todo,
+    video: todoVideo,
   },
   // Projects with only code links
   {
@@ -97,6 +101,7 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/LoanVerse",
     live: null,
     image: loan,
+    video: loanVideo,
   },
   {
     title: "Nexagen - Meeting Scheduling Platform",
@@ -105,6 +110,7 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/Schedule_Ease",
     live: null,
     image: schedule,
+    video: scheduleEaseVideo,
   },
   {
     title: "ERA - Smart Wardrobe Manager",
