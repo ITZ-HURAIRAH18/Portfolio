@@ -9,7 +9,8 @@ import {
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, X } from "lucide-react"
+import { useState } from "react"  // added to manage modal state
 import Finscope from "../assets/Finscope.png"
 import donor_hub from "../assets/donor_hub.png"
 import loan from "../assets/loan_System.png"
@@ -19,6 +20,10 @@ import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
 import todo from "../assets/todo.png"
 import hirelens from "../assets/hire.png"
+// video asset for project previews
+import fundhubVideo from "../assets/fundhub.mp4"
+import hirelensVideo from "../assets/hirelens.mp4"
+
 const projects = [
   // Projects with both code and live links
   {
@@ -36,6 +41,8 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/Saylani_hackton",
     live: "https://donor-hub-eta.vercel.app/",
     image: donor_hub,
+    // include video preview for this project
+    video: fundhubVideo,
   },
 {
   title: "HireLens – Intelligent Resume Intelligence",
@@ -44,6 +51,7 @@ const projects = [
   github: "https://github.com/ITZ-HURAIRAH18/HireLens",
   live: "https://hire-lensz.vercel.app/",
   image: hirelens,
+  video: hirelensVideo,
 }
 
 ,
@@ -109,6 +117,10 @@ const projects = [
 ]
 
 export function Projects() {
+  const [modalVideo, setModalVideo] = useState(null)
+
+  const closeModal = () => setModalVideo(null)
+
   return (
     <div className="container py-24">
       <motion.div
@@ -173,7 +185,7 @@ export function Projects() {
               <CardFooter className="flex-shrink-0 pt-4">
                 <div className="flex gap-3 w-full">
                   {project.github && (
-                    <Button asChild className={`${project.live ? 'flex-1' : 'w-full'} group/btn relative overflow-hidden`} variant="outline">
+                    <Button asChild className={`${project.live || project.video ? 'flex-1' : 'w-full'} group/btn relative overflow-hidden`} variant="outline">
                       <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                         <Github className="w-4 h-4 relative z-10" />
                         <span className="relative z-10">Code</span>
@@ -190,6 +202,13 @@ export function Projects() {
                       </a>
                     </Button>
                   )}
+                  {project.video && (
+                    <Button className="flex-1" variant="outline" onClick={() => setModalVideo(project.video)}>
+                      <span className="flex items-center justify-center gap-2">
+                        &#9658; Video
+                      </span>
+                    </Button>
+                  )}
                 </div>
               </CardFooter>
               </Card>
@@ -197,6 +216,28 @@ export function Projects() {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* video modal overlay */}
+      {modalVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeModal}>
+          <div className="relative w-full max-w-3xl" onClick={e => e.stopPropagation()}>
+            {/* close icon over video */}
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white text-2xl z-50 p-1 bg-black bg-opacity-50 rounded-full hover:bg-opacity-75"
+              aria-label="Close video"
+            >
+              <X size={24} />
+            </button>
+            <video
+              src={modalVideo}
+              controls
+              autoPlay
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </div >
   )
 }
