@@ -3,15 +3,19 @@ import { motion } from "framer-motion"
 import profileImage from "@/assets/profile.jpeg"
 import CV from "@/assets/CV.pdf"
 import Typewriter from 'typewriter-effect'
+import { firePremiumConfetti } from "@/lib/fireConfetti"
 
 export function Home() {
   const handleDownloadCV = () => {
+    console.log('CV download triggered');
     const link = document.createElement('a')
     link.href = CV
     link.download = 'Muhammad_Abu_Hurairah_CV.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+    console.log('Triggering premium confetti...');
+    firePremiumConfetti()
   }
 
   const techStack = ['React', 'Node.js', 'React Native', 'Electron.js', 'Django', 'PostgreSQL']

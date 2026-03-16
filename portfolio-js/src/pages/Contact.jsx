@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label"
 import { motion } from "framer-motion"
 import { Github, Mail, Linkedin, CheckCircle2, AlertCircle } from "lucide-react"
 import emailjs from "@emailjs/browser"
+import { fireConfetti } from "@/lib/fireConfetti"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -44,6 +45,8 @@ export function Contact() {
       )
 
       setIsSuccess(true)
+      console.log('Form submitted successfully, triggering confetti...');
+      fireConfetti()
       setFormData({ name: "", email: "", message: "" })
       setTimeout(() => setIsSuccess(false), 5000)
     } catch (err) {

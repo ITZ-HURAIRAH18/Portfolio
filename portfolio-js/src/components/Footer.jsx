@@ -14,7 +14,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative dark:bg-slate-950 bg-white dark:border-white/10 border-slate-200 border-t">
+    <footer className="relative dark:bg-black bg-white dark:border-white/10 border-slate-200 border-t">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:pt-20 md:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -145,7 +145,7 @@ export function Footer() {
             whileHover={{ y: -2 }}
             whileTap={{ y: 0 }}
             onClick={scrollToTop}
-            className="p-2 dark:bg-slate-900/50 dark:border dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-slate-900/80 bg-slate-100 border border-slate-300 hover:bg-slate-200 rounded-lg transition-all duration-300"
+            className="p-2 dark:bg-black/40 dark:border dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-black/60 bg-slate-100 border border-slate-300 hover:bg-slate-200 rounded-lg transition-all duration-300"
             aria-label="Back to top"
           >
             <ChevronUp className="w-4 h-4 text-primary dark:text-white" />
