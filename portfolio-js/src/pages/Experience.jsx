@@ -1,64 +1,57 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { motion } from "framer-motion"
+import { Briefcase, Calendar } from "lucide-react"
 
 const experience = [
   {
     company: "Nexagen Solutions",
     role: "Full Stack Developer",
-    period: "2025-Aug - 2022-Oct",
+    period: "Aug 2022 - Oct 2025",
     description:
-      "Developed and maintained web applications using the MERN stack, ensuring smooth frontend and backend integration.",
+      "Developed and maintained high-performance web applications using the MERN stack, ensuring smooth frontend and backend integration. Built RESTful APIs and optimized database queries for scalability.",
   },
   {
     company: "Technsol",
     role: "Django Developer",
-    period: "2024-Aug - 2025-Jan",
+    period: "Aug 2024 - Jan 2025",
     description:
-      "Built and optimized modern web applications using Django REST Framework, React, Next.js, and Tailwind CSS.",
+      "Built and optimized modern web applications using Django REST Framework, React, Next.js, and Tailwind CSS. Focused on clean architecture and performance optimization.",
   },
   {
     company: "Independent Projects",
-    role: "Full Stack / Django / Next Developer",
+    role: "Full Stack / Mobile / Desktop Developer",
     period: "2023 - Present",
     description:
-      "Built multiple personal and freelance projects including a Loan Management System, Quiz App, Chatbot System, Stock & Crypto Tracker and various frontend React applications.",
+      "Architected and developed multiple cross-platform applications including web apps, mobile apps (React Native), desktop applications (Electron.js), financial platforms, AI-powered tools, and management systems. Focus on scalability, user experience, and clean code practices.",
   }
 ];
 
-
 export function Experience() {
   return (
-    <div className="container py-24">
+    <div className="container py-24 md:py-32">
+      {/* Section Header */}
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center gap-4 text-center mb-12"
+        className="flex flex-col items-center gap-6 text-center mb-16"
       >
-        <div className="space-y-4 relative">
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
-          <h2 className="relative inline-block font-heading text-4xl tracking-tight lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
-            Professional Journey
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and work history.
-          </p>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full dark:bg-slate-900/30 dark:border dark:border-white/6 bg-blue-50 border border-blue-200">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="text-xs font-medium text-primary tracking-widest">EXPERIENCE</span>
         </div>
+
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text">
+          Career Path
+        </h2>
+
+        <p className="text-base dark:text-white text-slate-600 max-w-2xl font-sans">
+          Full-stack engineer building scalable systems across web, mobile, and desktop platforms.
+        </p>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500 before:to-transparent"
-      >
+
+      {/* Timeline */}
+      <div className="max-w-2xl mx-auto space-y-6">
         {experience.map((job, index) => (
           <motion.div
             key={job.company}
@@ -66,33 +59,68 @@ export function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+            className="relative"
           >
-            {/* Timeline Dot */}
-            <div className="absolute left-0 md:left-1/2 w-10 h-10 -ml-5 md:-ml-5 flex items-center justify-center">
-              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)] group-hover:scale-125 transition-transform duration-300" />
+            {/* Timeline dot and connector */}
+            <div className="absolute left-0 top-0 flex flex-col items-center h-full">
+              <motion.div 
+                whileHover={{ scale: 1.25 }}
+                className="w-3 h-3 rounded-full bg-primary border-2 border-background relative z-10 shadow-lg shadow-primary/30" 
+              />
+              {index < experience.length - 1 && (
+                <div className="w-px h-24 bg-gradient-to-b from-primary/30 to-transparent mt-3" />
+              )}
             </div>
 
-            <Card className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] relative overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group-hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.15)]">
-              {/* Gradient Border Line */}
-              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-pink-500 to-purple-500 opacity-50 group-hover:opacity-100 transition-opacity" />
-
-              <CardHeader>
-                <div className="flex flex-col gap-2">
-                  <div>
-                    <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">{job.role}</CardTitle>
-                    <CardDescription className="text-lg font-medium mt-1 text-foreground/80">{job.company}</CardDescription>
+            {/* Experience Card */}
+            <div className="ml-8">
+              <motion.div
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="dark:bg-slate-900/30 dark:border dark:border-white/10 dark:rounded-2xl dark:hover:border-white/20 bg-white border border-blue-300 hover:border-blue-400 rounded-2xl overflow-hidden transition-all group hover:shadow-md dark:hover:shadow-none"
+              >
+                {/* Terminal Header */}
+                <div className="flex items-center gap-2 px-6 py-3 dark:border-white/8 dark:bg-slate-800/50 border-slate-200 border-b bg-slate-50">
+                  <div className="flex gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-red-400/60"></div>
+                    <div className="w-2 h-2 rounded-full bg-yellow-400/60"></div>
+                    <div className="w-2 h-2 rounded-full bg-green-400/60"></div>
                   </div>
-                  <span className="text-sm font-medium text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full w-fit border border-purple-500/20">{job.period}</span>
+                  <span className="text-xs font-mono dark:text-white text-slate-500 ml-2">experience/{job.company.toLowerCase().replace(/\s+/g, '-')}</span>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">{job.description}</p>
-              </CardContent>
-            </Card>
+
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <div className="flex items-start gap-4">
+                    <motion.div 
+                      whileHover={{ scale: 1.1 }}
+                      className="p-3 dark:bg-slate-900/40 dark:border-white/60 dark:group-hover:border-white/80 bg-blue-50 border border-blue-200 group-hover:border-blue-300 rounded-lg transition-all"
+                    >
+                      <Briefcase className="w-4 h-4 text-primary dark:text-white" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold dark:text-white text-slate-900">
+                        {job.role}
+                      </h3>
+                      <p className="text-sm dark:text-white text-slate-600 font-sans mt-1">{job.company}</p>
+                      
+                      {/* Period */}
+                      <div className="flex items-center gap-2 mt-3 text-xs text-primary dark:text-white font-medium">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{job.period}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-sm dark:text-white text-slate-700 leading-relaxed font-sans dark:border-white/20 border-slate-200 border-t pt-4">
+                    {job.description}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         ))}
-      </motion.div>
-    </div >
+      </div>
+    </div>
   )
 }

@@ -15,7 +15,7 @@ function App() {
       <div className="relative flex min-h-screen flex-col bg-background font-sans antialiased overflow-x-hidden">
         <Header />
         <main className="flex-1">
-          <section id="home">
+          <section id="home" className="pt-20">
             <Home />
           </section>
           <section id="skills" className="bg-secondary/20">

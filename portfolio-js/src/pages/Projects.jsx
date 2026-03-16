@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { Github, ExternalLink, X } from "lucide-react"
-import { useState } from "react"  // added to manage modal state
+import { useState } from "react"
 import Finscope from "../assets/Finscope.png"
 import donor_hub from "../assets/donor_hub.png"
 import loan from "../assets/loan_System.png"
@@ -20,7 +20,6 @@ import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
 import todo from "../assets/todo.png"
 import hirelens from "../assets/hire.png"
-// video asset for project previews
 import fundhubVideo from "../assets/fundhub.mp4"
 import hirelensVideo from "../assets/hirelens.mp4"
 import loanVideo from "../assets/loan.mp4"
@@ -28,7 +27,6 @@ import scheduleEaseVideo from "../assets/scheduleease.mp4"
 import todoVideo from "../assets/todo.mp4"
 
 const projects = [
-  // Projects with both code and live links
   {
     title: "FinScope - Real-Time Analytics Dashboard",
     description: "A comprehensive financial analytics platform with real-time crypto & stock trading simulation, portfolio management, and market analytics.",
@@ -44,20 +42,17 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/Saylani_hackton",
     live: "https://donor-hub-eta.vercel.app/",
     image: donor_hub,
-    // include video preview for this project
     video: fundhubVideo,
   },
-{
-  title: "HireLens – Intelligent Resume Intelligence",
-  description: "Real-time AI resume analysis platform delivering ATS scores, actionable insights, and LLM-powered resume chat through a scalable FastAPI backend.",
-  tags: ["React", "FastAPI", "LangGraph", "Gemini API", "AI Systems"],
-  github: "https://github.com/ITZ-HURAIRAH18/HireLens",
-  live: "https://hire-lensz.vercel.app/",
-  image: hirelens,
-  video: hirelensVideo,
-}
-
-,
+  {
+    title: "HireLens – Intelligent Resume Intelligence",
+    description: "Real-time AI resume analysis platform delivering ATS scores, actionable insights, and LLM-powered resume chat through a scalable FastAPI backend.",
+    tags: ["React", "FastAPI", "LangGraph", "Gemini API", "AI Systems"],
+    github: "https://github.com/ITZ-HURAIRAH18/HireLens",
+    live: "https://hire-lensz.vercel.app/",
+    image: hirelens,
+    video: hirelensVideo,
+  },
   {
     title: "HealthWise AI - Medical Chatbot",
     description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
@@ -93,7 +88,6 @@ const projects = [
     image: todo,
     video: todoVideo,
   },
-  // Projects with only code links
   {
     title: "LoanVerse - Loan Management System",
     description: "A full-stack loan management platform built with Django and React, enabling loan applications, approvals, repayment tracking with role-based dashboards.",
@@ -128,122 +122,183 @@ export function Projects() {
   const closeModal = () => setModalVideo(null)
 
   return (
-    <div className="container py-24">
+    <div className="container py-24 md:py-32">
+      {/* Section Header */}
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center gap-4 text-center mb-12"
+        className="flex flex-col items-center gap-6 text-center mb-16"
       >
-        <div className="space-y-4 relative">
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
-          <h2 className="relative inline-block font-heading text-4xl tracking-tight lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects I've worked on.
-          </p>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full dark:bg-slate-900/30 dark:border dark:border-white/6 bg-blue-50 border border-blue-200">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="text-xs font-medium text-primary tracking-widest">FEATURED PROJECTS</span>
         </div>
+
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text">
+          Case Studies
+        </h2>
+
+        <p className="text-base dark:text-gray-400 text-slate-600 max-w-2xl font-sans">
+          Production applications built with modern tech stacks and clean, scalable architecture
+        </p>
       </motion.div>
+
+      {/* Projects Grid */}
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
       >
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            whileHover={{ y: -8 }}
             viewport={{ once: true }}
             className="group"
           >
-            {/* Animated Water Flow Border */}
-            <div className="animated-border group-hover:animated-border-hover rounded-xl h-full">
-              <Card className="relative flex flex-col h-[520px] bg-card backdrop-blur-xl border-0 rounded-xl overflow-hidden shadow-2xl">
-              <div className="h-48 flex-shrink-0 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+            <div className="relative h-full dark:bg-slate-900/30 dark:border dark:border-white/10 dark:rounded-2xl bg-white border border-blue-300 rounded-2xl overflow-hidden transition-all duration-300 dark:hover:border-white/20 hover:border-blue-400 hover:shadow-md dark:hover:shadow-none flex flex-col">
+              {/* Terminal Header */}
+              <div className="flex items-center gap-2 px-4 py-3 dark:border-white/8 border-slate-200 border-b dark:bg-slate-800/50 bg-slate-50">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
+                </div>
+                <span className="text-xs font-mono dark:text-gray-400 text-slate-500 ml-2">projects/{project.title.toLowerCase().replace(/\s+/g, '-')}</span>
+              </div>
+
+              {/* Image Section */}
+              <div className="relative h-40 overflow-hidden dark:bg-muted bg-slate-100 border-b dark:border-white/8 border-slate-200">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 opacity-5 pointer-events-none bg-gradient-to-t from-background to-transparent"></div>
               </div>
-              <CardHeader className="flex-shrink-0">
-                <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 group-hover:from-primary group-hover:to-purple-400 transition-all duration-300 line-clamp-2">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="line-clamp-3 mt-2">{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow overflow-auto">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-secondary/50 hover:bg-primary/20 hover:text-primary transition-colors border border-white/5">
-                      {tag}
-                    </Badge>
-                  ))}
+
+              {/* Content Section */}
+              <div className="relative p-5 flex flex-col flex-grow">
+                {/* Title & Description */}
+                <div className="space-y-2.5 flex-grow">
+                  <h3 className="text-base font-semibold dark:text-white text-slate-900 line-clamp-2 group-hover:text-primary transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs dark:text-gray-400 text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                    {project.description}
+                  </p>
                 </div>
-              </CardContent>
-              <CardFooter className="flex-shrink-0 pt-4">
-                <div className="flex gap-3 w-full">
+
+                {/* Tags */}
+                <div className="my-3 flex flex-wrap gap-1.5">
+                  {project.tags.slice(0, 4).map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex px-2.5 py-1 text-xs font-medium dark:border-white/60 dark:bg-slate-900/40 dark:text-white dark:group-hover:border-white/80 dark:group-hover:text-white border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:border-blue-300 rounded-full transition-all"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 4 && (
+                    <span className="inline-flex px-2.5 py-1 text-xs font-medium dark:text-gray-400 text-slate-500">
+                      +{project.tags.length - 4}
+                    </span>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-1.5 pt-3 dark:border-white/8 border-slate-200 border-t">
                   {project.github && (
-                    <Button asChild className={`${project.live || project.video ? 'flex-1' : 'w-full'} group/btn relative overflow-hidden`} variant="outline">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                        <Github className="w-4 h-4 relative z-10" />
-                        <span className="relative z-10">Code</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                      </a>
-                    </Button>
+                    <motion.div whileHover={{ y: -2, scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                      <Button 
+                        asChild 
+                        size="sm"
+                        className="w-full dark:border-white/60 dark:text-white dark:bg-slate-900/40 dark:hover:bg-slate-900/60 dark:hover:border-white/80 border border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 font-medium text-xs transition-all duration-200 rounded-lg"
+                        variant="outline"
+                      >
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5">
+                          <Github className="w-3.5 h-3.5" />
+                          <span>CODE</span>
+                        </a>
+                      </Button>
+                    </motion.div>
                   )}
                   {project.live && (
-                    <Button asChild className="flex-1 group/btn relative overflow-hidden" variant="outline">
-                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                        <ExternalLink className="w-4 h-4 relative z-10" />
-                        <span className="relative z-10">Live</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                      </a>
-                    </Button>
+                    <motion.div whileHover={{ y: -2, scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                      <Button 
+                        asChild 
+                        size="sm"
+                        className="w-full dark:border-white/60 dark:text-white dark:bg-slate-900/40 dark:hover:bg-slate-900/60 dark:hover:border-white/80 border border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 font-medium text-xs transition-all duration-200 rounded-lg"
+                        variant="outline"
+                      >
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5">
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>LIVE</span>
+                        </a>
+                      </Button>
+                    </motion.div>
                   )}
                   {project.video && (
-                    <Button className="flex-1" variant="outline" onClick={() => setModalVideo(project.video)}>
-                      <span className="flex items-center justify-center gap-2">
-                        &#9658; Video
-                      </span>
-                    </Button>
+                    <motion.div whileHover={{ y: -2, scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                      <Button 
+                        size="sm"
+                        className="w-full dark:border-white/60 dark:text-white dark:bg-slate-900/40 dark:hover:bg-slate-900/60 dark:hover:border-white/80 border border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 font-medium text-xs transition-all duration-200 rounded-lg"
+                        variant="outline"
+                        onClick={() => setModalVideo(project.video)}
+                      >
+                        <span className="flex items-center justify-center gap-1.5">
+                          <span>▶</span>
+                          <span>DEMO</span>
+                        </span>
+                      </Button>
+                    </motion.div>
                   )}
                 </div>
-              </CardFooter>
-              </Card>
+              </div>
             </div>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* video modal overlay */}
+      {/* Video Modal */}
       {modalVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeModal}>
-          <div className="relative w-full max-w-3xl" onClick={e => e.stopPropagation()}>
-            {/* close icon over video */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 dark:bg-black/90 bg-black/75 flex items-center justify-center z-50 p-4" 
+          onClick={closeModal}
+        >
+          <motion.div 
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.95 }}
+            className="relative w-full max-w-4xl" 
+            onClick={e => e.stopPropagation()}
+          >
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-white text-2xl z-50 p-1 bg-black bg-opacity-50 rounded-full hover:bg-opacity-75"
+              className="absolute top-4 right-4 dark:text-white text-white z-50 p-2 dark:hover:bg-slate-900/40 hover:bg-black/40 transition-colors dark:border-white/10 border border-white/20 rounded"
               aria-label="Close video"
             >
-              <X size={24} />
+              <X size={20} />
             </button>
             <video
               src={modalVideo}
               controls
               autoPlay
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto dark:border-white/6 border border-white/20 rounded-2xl"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
-    </div >
+    </div>
   )
 }

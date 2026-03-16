@@ -9,70 +9,72 @@
 
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(circle at 1px 1px, rgba(128, 128, 128, 0.1) 1px, transparent 0);
-    background-size: 40px 40px;
   }
 
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Light Theme - Premium Studio */
+    --background: 210 40% 98%;
+    --foreground: 215 19% 35%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 215 19% 35%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 215 19% 35%;
 
-    --primary: 0 0% 0%;
+    --primary: 217 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 19% 35%;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted: 210 16% 82%;
+    --muted-foreground: 210 13% 45%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 217 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 0%;
+    --border: 210 16% 94%;
+    --input: 210 40% 94%;
+    --ring: 217 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
+    /* Dark Theme - Pure Black & Electric Blue */
+    --background: 0 0% 2%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 0%;
+    --card: 0 0% 4%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 0%;
+    --popover: 0 0% 4%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 217 100% 59%;
+    --primary-foreground: 0 0% 2%;
 
-    --secondary: 0 0% 14.9%;
+    --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 217 100% 59%;
+    --accent-foreground: 0 0% 2%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 0 0% 12%;
+    --input: 0 0% 6%;
+    --ring: 217 100% 59%;
+
+    --radius: 1rem;
   }
 }
 
@@ -85,22 +87,56 @@
     @apply bg-background text-foreground;
   }
 
+  /* Glassmorphism & Premium Utilities */
+  .glass {
+    @apply backdrop-blur-xl bg-white/[0.02] border border-white/[0.06];
+  }
+
+  .glass-light {
+    @apply backdrop-blur-sm bg-white/40 border border-black/5;
+  }
+
+  /* Premium Studio Card Styling - Light Mode */
+  .card-premium {
+    @apply bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .card-premium-hover {
+    @apply hover:border-blue-300 hover:shadow-md;
+  }
+
+  .card-badge-light {
+    @apply bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100;
+  }
+
+  .magnetic-button {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .magnetic-button:hover {
+    transform: translateZ(0);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent;
+  }
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-secondary;
+    @apply bg-background;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-purple-500/50 rounded-full hover:bg-purple-500 transition-colors;
+    @apply bg-accent rounded-full hover:bg-accent/80 transition-colors;
   }
 
   /* Custom Selection */
   ::selection {
-    @apply bg-purple-500/30 text-purple-500;
+    @apply bg-accent/40 text-accent;
   }
 
   /* Animated Border Water Flow Effect */
@@ -162,5 +198,24 @@
   .animated-border-hover {
     padding: 6px;
     transition: padding 0.3s ease;
+  }
+
+  /* Border Beam Animation */
+  @keyframes borderBeam {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+
+  .border-beam {
+    animation: borderBeam 2s infinite;
+  }
+
+  /* Glass Mix Blend */
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/80 dark:bg-slate-900/80;
   }
 }

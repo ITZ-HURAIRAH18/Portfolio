@@ -2,111 +2,121 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import profileImage from "@/assets/profile.jpeg"
 import CV from "@/assets/CV.pdf"
-import Typewriter from 'typewriter-effect';
+import Typewriter from 'typewriter-effect'
 
 export function Home() {
   const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = CV;
-    link.download = 'M Abu Hurairah.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+    const link = document.createElement('a')
+    link.href = CV
+    link.download = 'Muhammad_Abu_Hurairah_CV.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  const techStack = ['React', 'Node.js', 'React Native', 'Electron.js', 'Django', 'PostgreSQL']
 
   return (
-    <div className="flex flex-col min-h-[calc(100vh-3.5rem)]">
-      <section className="flex-1 flex flex-col items-center justify-center space-y-10 py-8 md:py-16 overflow-hidden relative">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-          <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/5 opacity-20 blur-[100px]"></div>
-        </div>
-
-        <div className="container flex max-w-[68rem] flex-col md:flex-row items-center justify-between gap-16 text-center md:text-left">
+    <div className="flex flex-col min-h-[calc(100vh-3.5rem)] pt-[40px]">
+      <section className="flex-1 flex flex-col items-center justify-start space-y-4 py-4 md:py-8 overflow-hidden relative">
+        <div className="container flex max-w-[72rem] flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1 space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex-1 space-y-4"
           >
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
-                Hi </span><motion.span
-                  style={{ display: 'inline-block' }}
-                  animate={{
-                    rotate: [0, 20, 0],
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 0.5
-                  }}
-                  className="origin-bottom-right"
-                ></motion.span><span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">, I'm
-              </span> <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
-                Muhammad Abu Hurairah
-              </span>
-            </h1>
+            {/* Status Indicator */}
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full dark:bg-slate-900/30 dark:border dark:border-white/6 bg-blue-50 border border-blue-200 w-fit mx-auto md:mx-0 text-xs font-medium text-primary"
+            >
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+              <span className="text-primary tracking-widest">AVAILABLE FOR WORK</span>
+            </motion.div>
 
-            <div className="flex justify-center md:justify-start items-center gap-2 flex-wrap text-xl sm:text-2xl md:text-3xl font-bold min-h-[40px]">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-600 animate-gradient-x">
+            {/* Main Title */}
+            <div className="space-y-2">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] gradient-text">
+                Muhammad Abu Hurairah
+              </h1>
+              <div className="text-lg sm:text-xl md:text-2xl font-semibold text-primary tracking-tight">
                 <Typewriter
                   options={{
                     strings: [
-                      "Full-Stack Developer ",
-                      "Python | Django | React | Next.js",
-                      "MERN Stack Developer",
-                      "Clean Code | API Craftsman",
-                      "Always Learning New Things"
+                      "Full-Stack Developer",
+                      "Mobile Developer",
+                      "Desktop Developer",
+                      "Backend Engineer",
+                      "MERN Specialist",
+                      "React Native Developer",
+                      "Electron.js Developer",
+                      "Problem Solver"
                     ],
                     autoStart: true,
                     loop: true,
-                    deleteSpeed: 50,
+                    deleteSpeed: 60,
                     delay: 50,
                   }}
                 />
-              </span>
+              </div>
             </div>
 
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 mx-auto md:mx-0">
-              A passionate Full-Stack, MERN Developer & Next.js Developer from Pakistan.
+            {/* Description */}
+            <p className="max-w-[50rem] leading-relaxed text-base md:text-lg dark:text-gray-400 text-slate-600">
+              Full-stack engineer building scalable applications across web, mobile, and desktop platforms. Expertise in MERN, Django, React Native, Electron.js, and cloud infrastructure.
             </p>
 
-            <div className="space-x-4 pt-4 flex flex-col sm:flex-row justify-center md:justify-start gap-4 sm:gap-0">
-              <Button 
-                size="lg" 
-                className="w-full sm:w-auto bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300"
-                onClick={handleDownloadCV}
-              >
-                Download CV
-              </Button>
-              <a href="#contact">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-purple-500 hover:bg-gradient-to-r hover:from-primary hover:to-purple-600 hover:border-transparent hover:text-white transition-all duration-300">Contact Me</Button>
-              </a>
+            {/* CTA Buttons */}
+            <div className="pt-2 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+              <motion.div whileHover={{ y: -4, scale: 1.02 }} whileTap={{ y: 0, scale: 0.98 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 font-semibold tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all"
+                  onClick={handleDownloadCV}
+                >
+                  DOWNLOAD CV
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ y: -4, scale: 1.02 }} whileTap={{ y: 0, scale: 0.98 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                <a href="#contact" className="w-full sm:w-auto block">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full dark:border-white/10 dark:text-white dark:hover:border-white/20 dark:hover:bg-slate-900/40 border border-blue-200 text-blue-700 hover:border-blue-400 hover:bg-blue-50 font-semibold tracking-wide rounded-lg transition-all backdrop-blur-sm"
+                  >
+                    GET IN TOUCH
+                  </Button>
+                </a>
+              </motion.div>
             </div>
+
+            {/* Tech Stack Bar */}
+          
           </motion.div>
 
+          {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative flex-1 flex justify-center md:justify-end"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="relative flex-1 flex justify-center md:justify-end w-full max-w-sm md:max-w-none"
           >
-            <div className="relative w-full max-w-sm md:max-w-md h-[400px] md:h-[450px] group">
-              {/* Glowing Background Blob */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-purple-600 to-pink-600 rounded-full blur-[40px] opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
-
-              <div className="relative w-full h-full overflow-hidden shadow-2xl rounded-2xl border border-white/10 bg-card/30 backdrop-blur-sm">
+            <motion.div className="relative w-full max-w-sm aspect-square group" whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
+              <div className="absolute inset-0 dark:border-white/6 border border-blue-300 rounded-2xl pointer-events-none"></div>
+              
+              <div className="relative max-w-sm aspect-square overflow-hidden dark:border-white/6 dark:bg-slate-900/30 border border-blue-300 bg-slate-100 rounded-2xl">
                 <img
                   src={profileImage}
                   alt="Muhammad Abu Hurairah"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+                {/* Soft overlay */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none bg-gradient-to-b from-transparent to-primary/20"></div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

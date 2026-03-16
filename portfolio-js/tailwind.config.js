@@ -16,6 +16,11 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["'Inter'", "system-ui", "sans-serif"],
+      heading: ["'Inter'", "system-ui", "sans-serif"],
+      mono: ["'JetBrains Mono'", "'Fira Code'", "monospace"],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -80,12 +85,27 @@ export default {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
         },
+        "spring-bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0), 0 0 10px rgba(59, 130, 246, 0)" },
+          "50%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.3), 0 0 10px rgba(59, 130, 246, 0.2)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient-x": "gradient-x 15s ease infinite",
         "loading-bar": "loading-bar 1.5s infinite linear",
+        "spring-bounce": "spring-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "float": "float 3s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite",
       },
     },
   },
