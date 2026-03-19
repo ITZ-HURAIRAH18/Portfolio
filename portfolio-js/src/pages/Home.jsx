@@ -8,7 +8,7 @@ export function Home() {
   const handleDownloadCV = () => {
     console.log('CV download triggered');
     const link = document.createElement('a')
-    link.href = '/assets/CV.pdf'
+    link.href = '/CV.pdf'
     link.download = 'M Abu Hurairah CV.pdf'
     document.body.appendChild(link)
     link.click()
