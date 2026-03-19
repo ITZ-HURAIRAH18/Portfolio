@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import profileImage from "@/assets/profile.jpeg"
-import CV from "@/assets/CV.pdf"
 import Typewriter from 'typewriter-effect'
 import { firePremiumConfetti } from "@/lib/fireConfetti"
 
@@ -9,7 +8,7 @@ export function Home() {
   const handleDownloadCV = () => {
     console.log('CV download triggered');
     const link = document.createElement('a')
-    link.href = CV
+    link.href = '/assets/CV.pdf'
     link.download = 'M Abu Hurairah CV.pdf'
     document.body.appendChild(link)
     link.click()
