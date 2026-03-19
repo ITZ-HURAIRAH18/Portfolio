@@ -218,9 +218,28 @@
       }
     }
   </style>
+  <script>
+    // Prevent theme flash by setting the theme before React loads
+    (function() {
+      try {
+        const theme = localStorage.getItem('vite-ui-theme') || 'dark';
+        const resolvedTheme = theme === 'system' 
+          ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+          : theme;
+        
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(resolvedTheme);
+        document.body.style.backgroundColor = '#030014';
+      } catch (e) {
+        // Fallback: set dark theme if localStorage fails
+        document.documentElement.classList.add('dark');
+        document.body.style.backgroundColor = '#030014';
+      }
+    })();
+  </script>
 </head>
 
-<body>
+<body style="background-color: #030014; margin: 0; padding: 0;">
   <div id="initial-loader">
     <div class="loader-content">
       <div class="loader-orbit animate-orbit">
