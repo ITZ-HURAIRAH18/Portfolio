@@ -10,7 +10,7 @@ export function Home() {
     console.log('CV download triggered');
     const link = document.createElement('a')
     link.href = CV
-    link.download = 'Muhammad_Abu_Hurairah_CV.pdf'
+    link.download = 'M Abu Hurairah CV.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -22,7 +22,7 @@ export function Home() {
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-3.5rem)] pt-[40px]">
-      <section className="flex-1 flex flex-col items-center justify-start space-y-4 py-4 md:py-8 overflow-hidden relative">
+      <section className="flex-1 flex flex-col items-center justify-start space-y-4 py-4 md:py-8 relative">
         <div className="container flex max-w-[72rem] flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export function Home() {
             {/* Main Title */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] gradient-text">
-                Muhammad Abu Hurairah
+                 Muhammad Abu Hurairah
               </h1>
               <div className="text-lg sm:text-xl md:text-2xl font-semibold text-primary tracking-tight">
                 <Typewriter
@@ -114,7 +114,7 @@ export function Home() {
               <div className="relative max-w-sm aspect-square overflow-hidden dark:border-white/6 dark:bg-slate-900/30 border border-blue-300 bg-slate-100 rounded-2xl">
                 <img
                   src={profileImage}
-                  alt="Muhammad Abu Hurairah"
+                  alt="M Abu Hurairah"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Soft overlay */}
