@@ -18,13 +18,15 @@ import chat from "../assets/chatbot.png"
 import schedule from "../assets/schedule.png"
 import era from "../assets/Era.png"
 import quiz from "../assets/quiz.png"
-import todo from "../assets/todo.png"
 import hirelens from "../assets/hire.png"
+import flowventory from "../assets/Flowventory.png"
+import nextrack from "../assets/Nextrack.png"
 import fundhubVideo from "../assets/fundhub.mp4"
 import hirelensVideo from "../assets/hirelens.mp4"
 import loanVideo from "../assets/loan.mp4"
 import scheduleEaseVideo from "../assets/scheduleease.mp4"
-import todoVideo from "../assets/todo.mp4"
+import flowventoryVideo from "../assets/Flowventory.mp4"
+import nextrackVideo from "../assets/Nextrack.mp4"
 
 const projects = [
   {
@@ -71,22 +73,13 @@ const projects = [
     image: quiz,
   },
   {
-    title: "Todo App in Next.js",
-    description:
-      "A modern and feature-rich Todo management application built with Next.js 16, TypeScript, Prisma, and PostgreSQL. Includes authentication, role-based access, todo sharing, admin dashboard, dark/light theme support, and advanced UI animations.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "NextAuth",
-      "Tailwind CSS",
-      "Shadcn UI"
-    ],
-    github: "https://github.com/ITZ-HURAIRAH18/Todo-in-Next.js",
-    live: "https://taskify18.vercel.app/",
-    image: todo,
-    video: todoVideo,
+    title: "Flowventory - Smart Inventory & Order Management System",
+    description: "A state-of-the-art multi-branch inventory and order management solution with real-time stock tracking, role-based access control, atomic order processing, and professional reporting dashboards.",
+    tags: ["Laravel", "Vue.js", "MySQL", "Sanctum", "Vite", "Composition API"],
+    github: "https://github.com/ITZ-HURAIRAH18/Flowventory",
+    live: null,
+    image: flowventory,
+    video: flowventoryVideo,
   },
   {
     title: "LoanVerse - Loan Management System",
@@ -113,6 +106,15 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/ERA--Smart-Wardrobe-Manager",
     live: null,
     image: era,
+  },
+  {
+    title: "NexTrack Inventory Desktop",
+    description: "A professional-grade desktop inventory management application with real-time warehouse visibility, comprehensive purchase and sales workflows, role-based access control, and detailed financial reporting.",
+    tags: ["Electron", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/ITZ-HURAIRAH18/NexTrack_Inventory_Desktop",
+    live: "https://nextracks.vercel.app/",
+    image: nextrack,
+    video: nextrackVideo,
   },
 ]
 
@@ -197,20 +199,15 @@ export function Projects() {
                 </div>
 
                 {/* Tags */}
-                <div className="my-3 flex flex-wrap gap-1.5">
-                  {project.tags.slice(0, 4).map((tag) => (
+                <div className="my-3 flex flex-wrap gap-2 items-center">
+                  {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex px-2.5 py-1 text-xs font-medium dark:border-white/60 dark:bg-slate-900/40 dark:text-white dark:group-hover:border-white/80 dark:group-hover:text-white border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:border-blue-300 rounded-full transition-all"
+                      className="inline-flex px-2.5 py-1 text-xs font-medium dark:border-white/60 dark:bg-slate-900/40 dark:text-white dark:group-hover:border-white/80 dark:group-hover:text-white border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:border-blue-300 rounded-full transition-all whitespace-nowrap"
                     >
                       {tag}
                     </span>
                   ))}
-                  {project.tags.length > 4 && (
-                    <span className="inline-flex px-2.5 py-1 text-xs font-medium dark:text-gray-400 text-slate-500">
-                      +{project.tags.length - 4}
-                    </span>
-                  )}
                 </div>
 
                 {/* Action Buttons */}
