@@ -140,7 +140,7 @@ export function Skills() {
         >
           <p className="text-xs font-sans font-semibold text-primary tracking-widest mb-6 uppercase">All Technologies</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[{ name: "MongoDB", icon: "mongodb" }, { name: "Express", icon: "express" }, { name: "React", icon: "react" }, { name: "ReactNative", icon: "react" }, { name: "Electron", icon: "electron" }, { name: "Node.js", icon: "nodejs" }, { name: "Next.js", icon: "nextjs" }, { name: "Django", icon: "django" }, { name: "FastAPI", icon: "fastapi" }, { name: "Python", icon: "python" }, { name: "HTML", icon: "html" }, { name: "CSS", icon: "css" }, { name: "JavaScript", icon: "javascript" }, { name: "Bootstrap", icon: "bootstrap" }, { name: "Tailwind", icon: "tailwindcss" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "Git", icon: "git" }, { name: "GitHub", icon: "github" }, { name: "Docker", icon: "docker" }, { name: "C++", icon: "cpp" }, { name: "PHP", icon: "php" }, { name: "Laravel", icon: "laravel" }].map((tech) => (
+            {[{ name: "MongoDB", icon: "mongodb" }, { name: "Express", icon: "express" }, { name: "React", icon: "react" }, { name: "React Native", icon: "reactnative", customIcon: "/src/assets/react-native.png" }, { name: "Electron", icon: "electron" }, { name: "Node.js", icon: "nodejs" }, { name: "Next.js", icon: "nextjs" }, { name: "Django", icon: "django" }, { name: "FastAPI", icon: "fastapi" }, { name: "Python", icon: "python" }, { name: "HTML", icon: "html5" }, { name: "CSS", icon: "css3" }, { name: "JavaScript", icon: "javascript" }, { name: "Bootstrap", icon: "bootstrap" }, { name: "Tailwind", icon: "tailwindcss" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "Git", icon: "git" }, { name: "GitHub", icon: "github" }, { name: "Docker", icon: "docker" }, { name: "C++", icon: "cpp" }, { name: "PHP", icon: "php" }, { name: "Laravel", icon: "laravel" }].map((tech) => (
               <motion.div
                 key={tech.name}
                 whileHover={{ y: -6, scale: 1.1 }}
@@ -148,12 +148,16 @@ export function Skills() {
                 className="flex items-center justify-center p-4 dark:bg-slate-900/30 dark:border dark:border-white/10 dark:hover:border-white/20 bg-white border border-blue-300 hover:border-blue-400 rounded-2xl dark:hover:shadow-none hover:shadow-md group transition-all cursor-pointer"
               >
                 <img
-                  src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                  src={tech.customIcon || `https://skillicons.dev/icons?i=${tech.icon}`}
                   alt={tech.name}
                   width="36"
                   height="36"
-                  className="transition-transform group-hover:scale-125"
-                  onError={(e) => { e.target.style.display = 'none' }}
+                  className="transition-transform group-hover:scale-125 object-contain"
+                  onError={(e) => { 
+                    if (!tech.customIcon) {
+                      e.target.style.display = 'none'
+                    }
+                  }}
                 />
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-3 py-1.5 dark:bg-slate-800 dark:text-white dark:border-white/10 bg-slate-900 text-white border border-slate-700 text-xs font-medium whitespace-nowrap rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
                   {tech.name}

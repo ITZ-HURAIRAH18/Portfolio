@@ -74,14 +74,13 @@ const Preloader = () => {
       </div>
 
       {/* Background Aesthetic Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-600/8 rounded-full blur-[80px] animate-pulse delay-700"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/8 rounded-full blur-[80px] animate-pulse"></div>
 
       <div className="relative flex flex-col items-center">
         {/* Modern Glassmorphism Spinner Container */}
         <div className="relative w-40 h-40 flex items-center justify-center">
           {/* Ring 1 - Outer Pulsing */}
-          <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-[ping_3s_linear_infinite]"></div>
+          <div className="absolute inset-0 border border-cyan-400/20 rounded-full animate-[ping_3s_linear_infinite]"></div>
 
           {/* Ring 2 - Rotating Gradient */}
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]">
@@ -97,7 +96,7 @@ const Preloader = () => {
             />
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="0%" stopColor="#06b6d4" />
                 <stop offset="100%" stopColor="#06b6d4" />
               </linearGradient>
             </defs>
@@ -108,7 +107,7 @@ const Preloader = () => {
 
           {/* Ring 4 - Glowing Core */}
           <div className="relative w-16 h-16 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-cyan-500 rounded-full blur-md opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-cyan-400 rounded-full blur-md opacity-50 animate-pulse"></div>
             <div className="relative w-12 h-12 bg-[#050505] rounded-full flex items-center justify-center border border-white/10 backdrop-blur-sm">
               <span className="text-sm font-bold text-white tracking-tighter">
                 {progress}%
@@ -121,11 +120,11 @@ const Preloader = () => {
         <div className="mt-12 flex flex-col items-center gap-4">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl font-black tracking-[0.4em] uppercase">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-cyan-400 bg-[length:200%_auto] animate-gradient-x">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 bg-[length:200%_auto] animate-gradient-x">
                 Portfoilo
               </span>
             </h2>
-            <div className="h-0.5 w-12 bg-gradient-to-r from-blue-500 to-cyan-500 mt-1 rounded-full animate-bounce"></div>
+            <div className="h-0.5 w-12 bg-gradient-to-r from-cyan-400 to-cyan-500 mt-1 rounded-full animate-bounce"></div>
           </div>
 
           <div className="flex flex-col items-center gap-1">
@@ -136,7 +135,7 @@ const Preloader = () => {
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-1 h-1 bg-blue-500 rounded-full animate-bounce"
+                  className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce"
                   style={{ animationDelay: `${i * 0.2}s` }}
                 ></div>
               ))}

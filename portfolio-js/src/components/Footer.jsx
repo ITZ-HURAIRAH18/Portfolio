@@ -96,7 +96,7 @@ export function Footer() {
               {[
                 { icon: Github, href: "https://github.com/ITZ-HURAIRAH18", label: "GitHub" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/itzhurairah18/", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:hurairahumawais@gmail.com", label: "Email" },
+                { icon: Mail, href: "mailto:muhammadabuhurairah22@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
@@ -124,9 +124,7 @@ export function Footer() {
             <p className="text-xs text-slate-500 dark:text-slate-500 font-sans">
               © {currentYear} Muhammad Abu Hurairah. All rights reserved.
             </p>
-            <p className="text-[10px] text-slate-400 dark:text-slate-600 font-sans tracking-wide">
-              Built with React &amp; Tailwind CSS
-            </p>
+           
           </div>
 
           {/* Center: Status/Tagline */}
