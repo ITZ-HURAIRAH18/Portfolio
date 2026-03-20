@@ -21,6 +21,7 @@ import quiz from "../assets/quiz.png"
 import hirelens from "../assets/hire.png"
 import flowventory from "../assets/Flowventory.png"
 import nextrack from "../assets/Nextrack.png"
+import finScopeVideo from "../assets/Finscope.mp4"
 import fundhubVideo from "../assets/fundhub.mp4"
 import hirelensVideo from "../assets/hirelens.mp4"
 import loanVideo from "../assets/loan.mp4"
@@ -36,6 +37,7 @@ const projects = [
     github: "https://github.com/ITZ-HURAIRAH18/FinScope-Real-Time-Crypto-Stock-Analytics-Dashboard",
     live: "https://finscope-hub.vercel.app/",
     image: Finscope,
+    video: finScopeVideo,
   },
   {
     title: "DonorHub - Charity & Donation Platform",
@@ -56,30 +58,13 @@ const projects = [
     video: hirelensVideo,
   },
   {
-    title: "HealthWise AI - Medical Chatbot",
-    description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
-    tags: ["React", "Tailwind", "Google Gemini API", "Lucide Icons"],
-    github: "https://github.com/ITZ-HURAIRAH18/HealthWise-AI",
-    live: "https://health-wise-ai-chatbot.vercel.app/",
-    image: chat,
-  },
-  {
-    title: "Excel-Based Quiz App",
-    description:
-      "A dynamic and interactive quiz platform where users can upload Excel files containing MCQs. The app supports custom question selection, timers, instant answer validation, and a responsive Bootstrap UI.",
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "SheetJS", "Web3Forms"],
-    github: "https://github.com/ITZ-HURAIRAH18/Excel-Based-Quiz-App",
-    live: "https://eraquiz.netlify.app/",
-    image: quiz,
-  },
-  {
-    title: "Flowventory - Smart Inventory & Order Management System",
-    description: "A state-of-the-art multi-branch inventory and order management solution with real-time stock tracking, role-based access control, atomic order processing, and professional reporting dashboards.",
-    tags: ["Laravel", "Vue.js", "MySQL", "Sanctum", "Vite", "Composition API"],
-    github: "https://github.com/ITZ-HURAIRAH18/Flowventory",
-    live: null,
-    image: flowventory,
-    video: flowventoryVideo,
+    title: "NexTrack Inventory Desktop",
+    description: "A professional-grade desktop inventory management application with real-time warehouse visibility, comprehensive purchase and sales workflows, role-based access control, and detailed financial reporting.",
+    tags: ["Electron", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/ITZ-HURAIRAH18/NexTrack_Inventory_Desktop",
+    live: "https://nextracks.vercel.app/",
+    image: nextrack,
+    video: nextrackVideo,
   },
   {
     title: "LoanVerse - Loan Management System",
@@ -100,21 +85,38 @@ const projects = [
     video: scheduleEaseVideo,
   },
   {
+    title: "Flowventory - Smart Inventory & Order Management System",
+    description: "A state-of-the-art multi-branch inventory and order management solution with real-time stock tracking, role-based access control, atomic order processing, and professional reporting dashboards.",
+    tags: ["Laravel", "Vue.js", "MySQL", "Sanctum", "Vite", "Composition API"],
+    github: "https://github.com/ITZ-HURAIRAH18/Flowventory",
+    live: null,
+    image: flowventory,
+    video: flowventoryVideo,
+  },
+  {
+    title: "HealthWise AI - Medical Chatbot",
+    description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
+    tags: ["React", "Tailwind", "Google Gemini API", "Lucide Icons"],
+    github: "https://github.com/ITZ-HURAIRAH18/HealthWise-AI",
+    live: "https://health-wise-ai-chatbot.vercel.app/",
+    image: chat,
+  },
+  {
+    title: "Excel-Based Quiz App",
+    description:
+      "A dynamic and interactive quiz platform where users can upload Excel files containing MCQs. The app supports custom question selection, timers, instant answer validation, and a responsive Bootstrap UI.",
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "SheetJS", "Web3Forms"],
+    github: "https://github.com/ITZ-HURAIRAH18/Excel-Based-Quiz-App",
+    live: "https://eraquiz.netlify.app/",
+    image: quiz,
+  },
+  {
     title: "ERA - Smart Wardrobe Manager",
     description: "A modern clothing management system for boutiques with category management, cart functionality, checkout system, and inventory tracking.",
     tags: ["Django", "Python", "Bootstrap", "SQLite", "HTML/CSS"],
     github: "https://github.com/ITZ-HURAIRAH18/ERA--Smart-Wardrobe-Manager",
     live: null,
     image: era,
-  },
-  {
-    title: "NexTrack Inventory Desktop",
-    description: "A professional-grade desktop inventory management application with real-time warehouse visibility, comprehensive purchase and sales workflows, role-based access control, and detailed financial reporting.",
-    tags: ["Electron", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-    github: "https://github.com/ITZ-HURAIRAH18/NexTrack_Inventory_Desktop",
-    live: "https://nextracks.vercel.app/",
-    image: nextrack,
-    video: nextrackVideo,
   },
 ]
 
