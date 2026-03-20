@@ -5,7 +5,7 @@ const experience = [
   {
     company: "Nexagen Solutions",
     role: "Full Stack Developer",
-    period: "Aug 2022 - Oct 2025",
+    period: "Aug 2025 - Oct 2025",
     description:
       "Developed and maintained high-performance web applications using the MERN stack, ensuring smooth frontend and backend integration. Built RESTful APIs and optimized database queries for scalability.",
   },

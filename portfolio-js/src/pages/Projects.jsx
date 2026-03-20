@@ -33,6 +33,7 @@ const projects = [
   {
     title: "FinScope - Real-Time Analytics Dashboard",
     description: "A comprehensive financial analytics platform with real-time crypto & stock trading simulation, portfolio management, and market analytics.",
+    category: "Full-Stack",
     tags: ["Next.js", "TypeScript", "Redux", "Prisma", "PostgreSQL", "WebSocket"],
     github: "https://github.com/ITZ-HURAIRAH18/FinScope-Real-Time-Crypto-Stock-Analytics-Dashboard",
     live: "https://finscope-hub.vercel.app/",
@@ -42,6 +43,7 @@ const projects = [
   {
     title: "DonorHub - Charity & Donation Platform",
     description: "A full-stack MERN platform connecting NGOs and donors through transparent campaign management and secure donation tracking.",
+    category: "Full-Stack",
     tags: ["React", "Node.js", "MongoDB", "Express", "Redux", "Tailwind"],
     github: "https://github.com/ITZ-HURAIRAH18/Saylani_hackton",
     live: "https://donor-hub-eta.vercel.app/",
@@ -51,6 +53,7 @@ const projects = [
   {
     title: "HireLens – Intelligent Resume Intelligence",
     description: "Real-time AI resume analysis platform delivering ATS scores, actionable insights, and LLM-powered resume chat through a scalable FastAPI backend.",
+    category: "AI/ML",
     tags: ["React", "FastAPI", "LangGraph", "Gemini API", "AI Systems"],
     github: "https://github.com/ITZ-HURAIRAH18/HireLens",
     live: "https://hire-lensz.vercel.app/",
@@ -60,6 +63,7 @@ const projects = [
   {
     title: "NexTrack Inventory Desktop",
     description: "A professional-grade desktop inventory management application with real-time warehouse visibility, comprehensive purchase and sales workflows, role-based access control, and detailed financial reporting.",
+    category: "Full-Stack",
     tags: ["Electron", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/ITZ-HURAIRAH18/NexTrack_Inventory_Desktop",
     live: "https://nextracks.vercel.app/",
@@ -69,6 +73,7 @@ const projects = [
   {
     title: "LoanVerse - Loan Management System",
     description: "A full-stack loan management platform built with Django and React, enabling loan applications, approvals, repayment tracking with role-based dashboards.",
+    category: "Full-Stack",
     tags: ["Django", "React", "Vite", "Tailwind", "REST API", "SQLite"],
     github: "https://github.com/ITZ-HURAIRAH18/LoanVerse",
     live: null,
@@ -78,6 +83,7 @@ const projects = [
   {
     title: "Nexagen - Meeting Scheduling Platform",
     description: "A professional meeting scheduling and video conferencing platform with WebRTC, real-time communication, and role-based access control.",
+    category: "Full-Stack",
     tags: ["React", "Node.js", "MongoDB", "Socket.io", "WebRTC", "Express"],
     github: "https://github.com/ITZ-HURAIRAH18/Schedule_Ease",
     live: null,
@@ -87,6 +93,7 @@ const projects = [
   {
     title: "Flowventory - Smart Inventory & Order Management System",
     description: "A state-of-the-art multi-branch inventory and order management solution with real-time stock tracking, role-based access control, atomic order processing, and professional reporting dashboards.",
+    category: "Full-Stack",
     tags: ["Laravel", "Vue.js", "MySQL", "Sanctum", "Vite", "Composition API"],
     github: "https://github.com/ITZ-HURAIRAH18/Flowventory",
     live: null,
@@ -96,6 +103,7 @@ const projects = [
   {
     title: "HealthWise AI - Medical Chatbot",
     description: "An intelligent medical assistant chatbot providing instant, structured health information powered by Google Gemini API with dark mode support.",
+    category: "AI/ML",
     tags: ["React", "Tailwind", "Google Gemini API", "Lucide Icons"],
     github: "https://github.com/ITZ-HURAIRAH18/HealthWise-AI",
     live: "https://health-wise-ai-chatbot.vercel.app/",
@@ -105,6 +113,7 @@ const projects = [
     title: "Excel-Based Quiz App",
     description:
       "A dynamic and interactive quiz platform where users can upload Excel files containing MCQs. The app supports custom question selection, timers, instant answer validation, and a responsive Bootstrap UI.",
+    category: "Frontend",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "SheetJS", "Web3Forms"],
     github: "https://github.com/ITZ-HURAIRAH18/Excel-Based-Quiz-App",
     live: "https://eraquiz.netlify.app/",
@@ -113,6 +122,7 @@ const projects = [
   {
     title: "ERA - Smart Wardrobe Manager",
     description: "A modern clothing management system for boutiques with category management, cart functionality, checkout system, and inventory tracking.",
+    category: "Backend",
     tags: ["Django", "Python", "Bootstrap", "SQLite", "HTML/CSS"],
     github: "https://github.com/ITZ-HURAIRAH18/ERA--Smart-Wardrobe-Manager",
     live: null,
@@ -122,8 +132,15 @@ const projects = [
 
 export function Projects() {
   const [modalVideo, setModalVideo] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState("All")
 
   const closeModal = () => setModalVideo(null)
+  
+  const categories = ["All", "Full-Stack", "Frontend", "Backend", "AI/ML"]
+  
+  const filteredProjects = selectedCategory === "All" 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory)
 
   return (
     <div className="container py-24 md:py-32">
@@ -149,6 +166,29 @@ export function Projects() {
         </p>
       </motion.div>
 
+      {/* Filter Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="flex flex-wrap gap-3 justify-center mb-12"
+      >
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 ${
+              selectedCategory === category
+                ? "dark:bg-blue-600 dark:text-white bg-blue-600 text-white"
+                : "dark:bg-slate-800/50 dark:text-gray-300 dark:border dark:border-white/10 dark:hover:border-white/20 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </motion.div>
+
       {/* Projects Grid */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -157,7 +197,7 @@ export function Projects() {
         viewport={{ once: true }}
         className="grid gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
       >
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 20 }}
