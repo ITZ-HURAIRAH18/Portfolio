@@ -16,7 +16,7 @@ const skillCategories = [
   },
   {
     category: "Databases",
-    skills: ["MongoDB", "PostgreSQL", "Redis", "Firebase"],
+    skills: ["MongoDB", "PostgreSQL", "Redis", "Supabase"],
     Icon: Database,
     colSpan: "col-span-1 md:col-span-1",
   },
@@ -152,7 +152,7 @@ export function Skills() {
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3 md:gap-4 overflow-visible px-4">
-            {[{ name: "React", icon: "react" }, { name: "Next.js", icon: "nextjs" }, { name: "Vue.js", icon: "vue" }, { name: "Tailwind", icon: "tailwindcss" }, { name: "JavaScript", icon: "javascript" }, { name: "TypeScript", icon: "typescript" }, { name: "Node.js", icon: "nodejs" }, { name: "Express", icon: "express" }, { name: "Python", icon: "python" }, { name: "Django", icon: "django" }, { name: "FastAPI", icon: "fastapi" }, { name: "Laravel", icon: "laravel" }, { name: "PHP", icon: "php" }, { name: "C++", icon: "cpp" }, { name: "MongoDB", icon: "mongodb" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "Redis", icon: "redis" }, { name: "Firebase", icon: "firebase" }, { name: "HTML", icon: "html" }, { name: "CSS", icon: "css" }, { name: "Git", icon: "git" }, { name: "GitHub", icon: "github" }, { name: "Docker", icon: "docker" }, { name: "Bootstrap", icon: "bootstrap" }, { name: "Electron", icon: "electron" }].map((tech, index) => (
+            {[{ name: "React", icon: "react" }, { name: "Next.js", icon: "nextjs" }, { name: "Vue.js", icon: "vue" }, { name: "Tailwind", icon: "tailwind" }, { name: "JavaScript", icon: "javascript" }, { name: "TypeScript", icon: "typescript" }, { name: "Node.js", icon: "nodejs" }, { name: "Express", icon: "express" }, { name: "Python", icon: "python" }, { name: "Django", icon: "django" }, { name: "FastAPI", icon: "fastapi" }, { name: "Laravel", icon: "laravel" }, { name: "PHP", icon: "php" }, { name: "C++", icon: "cpp" }, { name: "MongoDB", icon: "mongodb" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "Redis", icon: "redis" }, { name: "Supabase", icon: "supabase" }, { name: "HTML", icon: "html" }, { name: "CSS", icon: "css" }, { name: "Git", icon: "git" }, { name: "GitHub", icon: "github" }, { name: "Docker", icon: "docker" }, { name: "Bootstrap", icon: "bootstrap" }, { name: "Electron", icon: "electron" }].map((tech, index) => (
               <motion.div
                 key={tech.name}
                 initial={{ opacity: 0, y: 10 }}
