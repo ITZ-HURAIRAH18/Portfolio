@@ -136,26 +136,46 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="pt-12 dark:border-white/12 border-blue-300 border-t"
+          className="pt-16 mt-12 dark:border-white/12 border-blue-300 border-t"
         >
-          <p className="text-xs font-sans font-semibold text-primary tracking-widest mb-6 uppercase">All Technologies</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[{ name: "MongoDB", icon: "mongodb" }, { name: "Express", icon: "express" }, { name: "React", icon: "react" }, { name: "React Native", icon: "react", useFilter: true }, { name: "Electron", icon: "electron" }, { name: "Node.js", icon: "nodejs" }, { name: "Next.js", icon: "nextjs" }, { name: "Django", icon: "django" }, { name: "FastAPI", icon: "fastapi" }, { name: "Python", icon: "python" }, { name: "HTML", icon: "html" }, { name: "CSS", icon: "css" }, { name: "JavaScript", icon: "javascript" }, { name: "Bootstrap", icon: "bootstrap" }, { name: "Tailwind", icon: "tailwindcss" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "Git", icon: "git" }, { name: "GitHub", icon: "github" }, { name: "Docker", icon: "docker" }, { name: "C++", icon: "cpp" }, { name: "PHP", icon: "php" }, { name: "Laravel", icon: "laravel" }].map((tech) => (
+          <div className="flex flex-col items-center text-center space-y-8 mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full dark:bg-slate-900/30 dark:border dark:border-white/6 bg-blue-50 border border-blue-200">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-xs font-medium text-primary tracking-widest">TECH ARSENAL</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold tracking-tight gradient-text">
+              Complete Technology Stack
+            </h3>
+            <p className="text-sm dark:text-gray-400 text-slate-600 max-w-xl">
+              Full range of tools and frameworks powering modern applications
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3 md:gap-4 overflow-visible px-4">
+            {[{ name: "React", icon: "react" }, { name: "Next.js", icon: "nextjs" }, { name: "Vue.js", icon: "vue" }, { name: "Tailwind", icon: "tailwindcss" }, { name: "JavaScript", icon: "javascript" }, { name: "TypeScript", icon: "typescript" }, { name: "Node.js", icon: "nodejs" }, { name: "Express", icon: "express" }, { name: "Python", icon: "python" }, { name: "Django", icon: "django" }, { name: "FastAPI", icon: "fastapi" }, { name: "Laravel", icon: "laravel" }, { name: "PHP", icon: "php" }, { name: "C++", icon: "cpp" }, { name: "MongoDB", icon: "mongodb" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "Redis", icon: "redis" }, { name: "Firebase", icon: "firebase" }, { name: "HTML", icon: "html" }, { name: "CSS", icon: "css" }, { name: "Git", icon: "git" }, { name: "GitHub", icon: "github" }, { name: "Docker", icon: "docker" }, { name: "Bootstrap", icon: "bootstrap" }, { name: "Electron", icon: "electron" }].map((tech, index) => (
               <motion.div
                 key={tech.name}
-                whileHover={{ y: -6, scale: 1.1 }}
-                whileTap={{ y: -8, scale: 1.15 }}
-                className="flex items-center justify-center p-4 dark:bg-slate-900/30 dark:border dark:border-white/10 dark:hover:border-white/20 bg-white border border-blue-300 hover:border-blue-400 rounded-2xl dark:hover:shadow-none hover:shadow-md group transition-all cursor-pointer"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.02 }}
+                whileHover={{ y: -8, scale: 1.15 }}
+                whileTap={{ scale: 0.95 }}
+                viewport={{ once: true }}
+                className="group relative overflow-visible"
               >
-                <img
-                  src={`https://skillicons.dev/icons?i=${tech.icon}`}
-                  alt={tech.name}
-                  width="36"
-                  height="36"
-                  className={`transition-transform group-hover:scale-125 object-contain ${tech.useFilter ? "filter hue-rotate-300 saturate-200 brightness-110" : ""}`}
-                  onError={(e) => { e.target.style.display = 'none' }}
-                />
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-3 py-1.5 dark:bg-slate-800 dark:text-white dark:border-white/10 bg-slate-900 text-white border border-slate-700 text-xs font-medium whitespace-nowrap rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur" />
+                <div className="relative aspect-square flex flex-col items-center justify-center p-3 dark:bg-gradient-to-br dark:from-slate-800/50 dark:to-slate-900/50 bg-gradient-to-br from-blue-50/50 to-white/50 dark:border dark:border-white/10 border border-blue-200/50 hover:border-blue-400/50 dark:hover:border-white/20 rounded-2xl dark:hover:shadow-lg dark:hover:shadow-primary/20 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+                  <img
+                    src={`https://skillicons.dev/icons?i=${tech.icon}`}
+                    alt={tech.name}
+                    width="40"
+                    height="40"
+                    className={`transition-transform group-hover:scale-125 object-contain drop-shadow-sm ${tech.useFilter ? "filter hue-rotate-300 saturate-200 brightness-110" : ""}`}
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                </div>
+                {/* Tooltip */}
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 dark:bg-slate-900 dark:text-white dark:border dark:border-white/20 bg-slate-800 text-white border border-slate-700 text-xs font-semibold whitespace-nowrap rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
                   {tech.name}
                 </div>
               </motion.div>
