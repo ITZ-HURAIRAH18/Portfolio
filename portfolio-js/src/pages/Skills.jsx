@@ -28,7 +28,7 @@ const skillCategories = [
   },
   {
     category: "Tools & DevOps",
-    skills: ["Git", "Docker", "GitHub", "AWS"],
+    skills: ["Git", "Docker", "GitHub"],
     Icon: Wrench,
     colSpan: "col-span-1 md:col-span-1",
   },
